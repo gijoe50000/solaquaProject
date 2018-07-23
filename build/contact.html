@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/_reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navAndFoot.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <title>Solaqua</title>
+</head >
+
+   
+<nav id="home">
+    <img src="images/logo/logoAndOutline.png" alt="logo" id="logo" width="80" height="80">
+    
+    <label for="menu-toggle" id="hmbMenu">&#9776</label>
+        <input type="checkbox"  id="menu-toggle">
+
+
+    <ul id="navList">
+        <li class="home">  <a href="index.html">Home</a>       </li>
+        <li class="gal">  <a href="gallery.html">Gallery</a>   </li>
+        <li class="prod">  <a href="products.html">Products</a></li>
+        <li class="news">  <a href="news.html">News</a>        </li>
+        <li class="about">  <a href="aboutus.html">About Us</a></li>
+        <li class="cont">  <a href="contact.html">Contact</a>  </li>
+    </ul>
+
+    <!-- <img src="images/ico/sunny.svg" alt="placeholder for restapi" id="test" width="80"> -->
+</nav>
+
+
+
+
+
+
+
+
+    <main id="contactMain">
+
+
+         
+    
+    
+    
+    
+    <!-- Form -->
+            <form action="/cgibin" method="GET" id="formContact">
+                <h2 >Contact Us</h2>
+                
+                <p id="para1">If you want to purchase a product enter the product code, if you were automatically redirected here from the product
+                    page then this will be filled out already. For installations, enter a date and time that suits you, and we will
+                    contact you shortly to confirm.</p>
+        
+        
+                
+                
+                
+                <label id= "labname" for="name">Name:</label>
+                <input id= "inpname" type="text" name="name">
+    
+                <label id= "labadd" for="address">Address:
+                    <br>(optional)</label>
+                <input id= "inpadd" type="text" name="address">
+    
+    
+                <input id= "inpadd2" type="text" name="address2">
+    
+    
+                <input id= "inpadd3" type="text" name="address3">
+    
+    
+                <label id= "labtel" for="tel">Tel:</label>
+                <input id= "inptel" type="tel" name="tel">
+    
+                <label id= "labmail" for="email">Email:</label>
+                <input id= "inpmail" type="email" name="email">
+    
+                <label id= "labcomment"for="comment">Comment:</label>
+                <textarea id= "inpcomment"  name="comment" id="comment" cols="30" rows="10"></textarea>
+    
+               
+
+                <p class="italctext">If you are ordering a product or installation please select the product from the dropdown list. Otherwise select
+                    "none".
+                </p>
+    
+                <label id="labinstallDate"for="installDate">install Date:</label>
+                <input type="date" name="installDate" id="installDate">
+                
+                
+                <label id= "labproductList"for="productList">product List:</label>
+                <select name="productList" id="productList">
+                    <option value="none">None</option>
+                    <option value="readymade">Ready Made Panels</option>
+                    <option value="custommade">Custom Size Panels</option>
+                    <option value="charging">Car Charging Station</option>
+                    <option value="portable">Portable Charging Equipment</option>
+                </select>
+                
+                
+                <input type="button" value="submit" name="submit" id="submitContact">
+                <!-- <a href="#home"><img src="images/ico/bttIcon.svg" alt="" width="40" id="backToTop"></a> -->
+
+                <p id= "askQ" class="boldTextContact">If you have any questions, 
+                    please don’t hesitate to ask. We are happy to hear from you!</p>
+    
+            </form>
+    <!-- End of Form -->
+    
+    
+           
+    
+    
+        </main>
+
+
+        <footer>
+
+            <section id="contact">
+            <h2  id="contactHeader">CONTACT</h2>
+                <p id="footAddress">
+            Solaqua,<br>
+            Unit 6A,<br>
+            Eastgate Business Park,<br>
+            Little Island,
+            Co. Cork.
+            Q37X058
+            
+            021 4355254
+            info@solaqua.com
+            </p>
+        </section>
+    
+        
+            <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
+            <img src="images/small/map.jpg" alt="map showing our location" class="fullImg" id="map" srcset="">
+    
+    
+    
+    
+    
+    
+            <form action="/cgibin" method="GET" id="newsletter">
+                <h4 id="nlhead">SIGN UP FOR NEWSLETTER</h4>
+                
+                <div id="formInput">
+                    <label id="labeln" for="name">Name:</label>
+                    <input  id="inputn" type="text" name="name">
+             
+                    <label id="labele" for="email">Email:</label>
+                    <input id="inpute" type="email" name="email">
+                </div>
+            </form>
+    
+            <ul id="navFooter">
+    
+                <li class="home">  <a href="index.html">Home</a>      </li>
+                <li class="gal">  <a href="gallery.html">Gallery</a>      </li>
+                <li class="prod">  <a href="products.html">Products</a>    </li>
+                <li class="news">  <a href="news.html">News</a>                 </li>
+                <li class="about">  <a href="aboutus.html">About Us</a>             </li>
+                <li class="cont">  <a href="contact.html">Contact</a>  </li>
+            </ul>
+            <img src="images/logo/qa.jpg" alt="qa logo" id="logoQa" width="40">
+            <img src="images/logo/iso.png" alt="iso standard logo" id="logoIso" width="40">
+    
+    
+    
+            <ul id="policyFooter">
+    
+                    <li> <a href="#home">Terms and Conditions </a> | </li>
+                    <li><a href="#gallery">Cookie Policy</a> |</li>  
+                    <li><a href="#products">Privacy Policy</a>| </li> 
+                    <li><a href="#news">Sitemap</a> </li>
+                  
+                </ul>
+    
+    
+    
+    
+    
+        </footer>
+    
+    
+    
+     
+<a href="#home">
+        <img src="images/ico/bttIcon.svg" alt="" width="40" id="backToTop"></a>
+    
+        <!-- <script    src="js/jquery-3.3.1.js" ></script> -->
+        <script src="js/js.js"></script>
+    
+        </body>
+    
+    </html>

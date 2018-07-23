@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* line 2, scss/style.scss */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* line 13, scss/style.scss */
+body {
+  font-size: 20px;
+  font-family: 'Open Sans',  sans-serif;
+  color: #111;
+  text-align: center; }
+
+/* line 24, scss/style.scss */
+h1 {
+  width: 100%;
+  position: absolute;
+  top: 10rem;
+  font-size: 10vw;
+  color: #41E800;
+  font-weight: bold; }
+
+/* line 35, scss/style.scss */
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 40px; }
+
+/* line 42, scss/style.scss */
+h3 {
+  font-size: 2.6rem;
+  font-weight: 500; }
+
+/* line 48, scss/style.scss */
+#fullImg {
+  width: 100%; }
+
+/* line 52, scss/style.scss */
+#solCar {
+  width: 80%; }
+
+/* line 55, scss/style.scss */
+.para {
+  font-size: 2rem;
+  line-height: 1.4;
+  margin: 4rem; }
+
+/* line 61, scss/style.scss */
+.galImg {
+  width: 80vw;
+  border: 2px solid black; }
+
+/************End Of Style.css***************/

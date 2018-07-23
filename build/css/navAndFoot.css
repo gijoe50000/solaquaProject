@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #E5E5E5;
+  height: 80px; }
+
+#menu-toggle {
+  display: none; }
+
+#hmbMenu {
+  visibility: visible;
+  padding: 0 8px 0 8px;
+  margin: 15px;
+  font-size: 40px;
+  line-height: 1.1; }
+
+#hmbMenu:hover {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px; }
+
+#hmbMenu:active {
+  box-shadow: inset #DFDCDC 4px 4px 8px 10px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px; }
+
+ul {
+  list-style: none;
+  z-index: 1; }
+
+#navList {
+  visibility: hidden;
+  position: absolute;
+  right: 0px;
+  top: 60px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  background: rgba(110, 110, 110, 0.7); }
+  #navList a {
+    text-decoration: none;
+    color: orange;
+    padding: 0 32vw; }
+  #navList li {
+    padding: 15px 35px 15px 35px;
+    border: 1px solid #E5E5E5;
+    background: rgba(80, 80, 80, 0.85);
+    padding: 20px 0; }
+  #navList li:hover {
+    background: #6E6E6E; }
+
+#menu-toggle:checked + #navList {
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  background: rgba(110, 110, 110, 0.7); }
+
+/**************End Nav**********************/
+/************** Nav Media Query ****************************/
+@media (min-width: 800px) {
+  #hmbMenu {
+    display: none; }
+  #navList {
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: static;
+    align-items: center;
+    background: #E5E5E5; }
+    #navList li {
+      padding: 15px 15px 15px 1px;
+      border: 1px solid #E5E5E5;
+      background: #E5E5E5; }
+    #navList li:hover {
+      background: #DFDCDC; }
+    #navList a {
+      text-decoration: none;
+      color: #6E6E6E;
+      font-size: 1.6rem;
+      padding: 0 10px; } }
+
+/************Footer.css*********************/
+footer {
+  background: #DFDCDC; }
+  footer #footerGrid {
+    max-width: 100vw;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+    /*Form for newsletter*/ }
+    footer #footerGrid #footAddress {
+      margin-top: 15px;
+      align-self: start;
+      font-size: 1.0rem;
+      line-height: 1.2; }
+    footer #footerGrid #map {
+      max-width: 100%;
+      width: 100vw; }
+    footer #footerGrid #newsletter {
+      background: #DFDCDC;
+      width: 300px;
+      box-shadow: inset #6E6E6E -3px -3px 200px 4px;
+      margin: 30px auto;
+      margin-top: 15px;
+      align-self: start; }
+      footer #footerGrid #newsletter input {
+        margin: 5px; }
+    footer #footerGrid #formInput {
+      padding: 30px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 3fr;
+      grid-row-gap: 10px;
+      font-size: 1.2rem; }
+      footer #footerGrid #formInput #labeln {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: end; }
+      footer #footerGrid #formInput #inputn {
+        grid-row: 1;
+        grid-column: 2;
+        align-self: end;
+        width: auto; }
+      footer #footerGrid #formInput #labele {
+        width: 20px;
+        grid-row: 2;
+        grid-column: 1; }
+      footer #footerGrid #formInput #inpute {
+        grid-row: 2;
+        grid-column: 2;
+        width: auto; }
+    footer #footerGrid #navFooter {
+      margin-top: 15px;
+      align-self: start; }
+      footer #footerGrid #navFooter li {
+        font-size: 1.0rem;
+        line-height: 1;
+        padding: 6px; }
+    footer #footerGrid #logos {
+      align-self: end;
+      margin-top: 10px; }
+      footer #footerGrid #logos img {
+        padding: 0 10px; }
+  footer #policyFooter {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    footer #policyFooter ul {
+      margin: 30px auto; }
+    footer #policyFooter li {
+      padding: 0 0 10px 0; }
+
+/****End Footer********/
+/************End Of Nav.css***************/

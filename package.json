@@ -1,0 +1,30 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-scss": "node-sass  -w scss -o build/css",
+    
+    "build": " npm run build-concat && npm run build-scss  ",
+    "build-bs": "browser-sync start --server",
+    "build-scsscat":"npm run build-scss build-concat broswer-sync",
+    "start": " nodemon -e js,scss -x \"npm run build\" --ignore build/"
+
+   
+  },
+  "author": "joe",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "concat": "^1.0.3",
+    "concatenate": "0.0.2",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.17.5",
+    "uglify-js": "^3.4.3"
+  }
+}
