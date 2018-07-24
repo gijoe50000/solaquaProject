@@ -263,7 +263,29 @@
 
 
             <!-- <img src="images/small/map.jpg" alt="map showing our location" class="fullImg" id="map" srcset=""> -->
+           
+           
+           
+           
+           
+           <section>
+            <h1>GeoLocation</h1>
+            <div id="geoWrapper">
+            <label>Your Location is:</label>
+            <br>
+            <br> 
+            <input type="text" id="latitude"><label> Latitude </label>
+            <br>
+            <input type="text" id="longitude"><label> Longitude </label>
+            
+            <div id="mapDiv">
 
+
+            </div><!-- map -->
+
+
+           </section>
+           
 
 
 
@@ -301,17 +323,20 @@
 
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="js/js.js"></script>
 <script src="js/kontent.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXAZZRgEdZF-X8XyEINBhBF7vHHbJic-g&callback=initMap"></script>
+   
+<!-- <script src="js/js.js"></script> -->
 
 
+<!-- 
 <script>
 $(function() {
     $('#contProducts').tabs();
    
 }); //end file
 
-</script>
+</script> -->
 
 </body>
 
