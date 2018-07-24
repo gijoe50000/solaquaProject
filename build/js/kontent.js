@@ -154,6 +154,24 @@ $('main').load('contact.html main > *');
 
 
 
+
+/**** Form *****/
+var submitted=$('#submitContact');
+submitted.click(function(){
+    alert("Submit Success!");
+    console.log("submit clicked");
+});
+
+
+
+var submitted=$('#submitNewsletter');
+submitted.click(function(){
+    alert("Submit Success!");
+    console.log("submit clicked");
+});
+
+
+
 }); //end file
 
 
