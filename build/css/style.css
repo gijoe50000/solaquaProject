@@ -118,8 +118,7 @@ button {
   position: fixed;
   top: 40px;
   z-index: 1;
-  padding: 30px;
-  border: 2px solid black; }
+  padding: 30px; }
 
 #close {
   float: right;

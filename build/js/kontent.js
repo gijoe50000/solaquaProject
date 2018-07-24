@@ -2,18 +2,45 @@ $(function() {
 
 
 
-var $imageClicked=$('#gallery img');
-var popup= $('#popup'); //popup div for clicked image
-var close=$('#close');
+var navList=$('#navList');
+var showMenu=$('#hmbMenu');
+navList.hide();
+
+navList.click('slow', function(){
+    navList.hide();
+    console.log("blah hide "+this);
+
+});
+
+
+showMenu.click('slow', function(){
+    $('#navList').toggle();
+    console.log("blah show "+navList.attr('id'));
+
+});
+
+
+
+
+
+
+
+
+
+/****** Gallery images popup ******/ 
+
+
+
+//popup div for clicked image
+var popup= $('#popup'); 
 popup.hide();
-
-
-close.click('slow',function(){ popup.hide()  });
 popup.click( 'slow', function(){   popup.hide()  });
 
 
-
+var $imageClicked=$('#gallery img');
 $imageClicked.click(galleryAddClickHandlers());
+
+
 
 
 function galleryAddClickHandlers() {
@@ -22,22 +49,13 @@ function galleryAddClickHandlers() {
         popup.empty();
         popup.append( '<img src='    + 
         this.getAttribute('src')     +     '>' );
-        console.log("blah "+this);
+        console.log("galleryAddClickHandlers "+this);
         var tempImg=this;
-        // console.log(tempImg);
+        console.log("temp image= "+tempImg.getAttribute('class'))        ;
+        console.log("image Src= "+tempImg.getAttribute('src'))        ;
     });
 }
  
-
-
-function onLoadProducts(){
-    console.log("onLoadProducts");
-    $('#contProducts').tabs();
-
-}
-
-
-
 
 
 
@@ -50,40 +68,62 @@ function center(){
       $(window).scrollLeft()) + "px");
 }
 
-
-
+/* End of Gallery images popup*/ 
 
 /***************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onLoadProducts(){
+    console.log("onLoadProducts");
+    $('#contProducts').tabs();
+
+}
+
+
 function onLoadGallery() {
     console.log("onLoadGallery");
     galleryAddClickHandlers();
 }
 
+// Load More.. Button in gallery in index.html
 var $galleryBut= $('#galleryButton');
     $galleryBut.click(function(){
-        $('#gallery').load('gallery2.html #gallery > *',null,onLoadGallery);
+        $('#gallery').load('gallery.html #gallery > *',null , onLoadGallery);
         console.log($galleryBut);
 });
 
 
 
-var $homeBut=$('#homeButton');
+var $homeBut=$('.homeButton');
     $homeBut.click(function(){
     $('main').load('index.html main > *');
 
 });
 
-
-var $galBut= $('#galButton');
+// load full gallery page using AJAX
+var $galBut= $('.galButton');
     $galBut.click(function(){
-        $('main').load('gallery.html main > *');
+        $('main').load('gallery.html main > *', null, onLoadGallery);
         console.log($galBut);
 });
 
 
 
 
-var $prodBut=$('#prodButton');
+var $prodBut=$('.prodButton');
     $prodBut.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
    });
@@ -91,7 +131,7 @@ var $prodBut=$('#prodButton');
 
 
 
-var $aboutBut=$('#aboutButton');
+var $aboutBut=$('.aboutButton');
     $aboutBut.click(function(){
     $('main').load('aboutus.html main > *');
 });
@@ -99,13 +139,13 @@ var $aboutBut=$('#aboutButton');
 
 
 
-var $newsBut=$('#newsButton');
+var $newsBut=$('.newsButton');
     $newsBut.click(function(){
 $('main').load('news.html main > *');
 });
 
 
-var $contactBut=$('#contactButton');
+var $contactBut=$('.contactButton');
     $contactBut.click(function(){
 $('main').load('contact.html main > *');
 });
@@ -116,9 +156,7 @@ $('main').load('contact.html main > *');
 
 }); //end file
 
-//click button
-//get content
-//put content in now location
+
 
 
 

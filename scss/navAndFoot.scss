@@ -17,16 +17,16 @@ nav{
   
 }
 
-#menu-toggle{
-  display:none;
-}
 
 #hmbMenu{
+ position: absolute;
+ right: 7px;top:7px;
   visibility: visible;
   padding: 0 8px 0 8px;
   margin:15px;
   font-size:40px;
   line-height: 1.1;
+  cursor: pointer;
   
 }
 
@@ -55,14 +55,16 @@ ul{
   }
 
 
+//nav for large screens
+  #navListLarge {
+    visibility: hidden;
+  }
 
 //smaller screens
-// .navListSmall{
   #navList{
-    visibility: hidden;
-    position:absolute;
+    position:fixed;
     right:0px;
-    top:60px;
+    top:80px;
     width:100vw;
     display:flex;
     flex-direction: column;
@@ -72,7 +74,7 @@ ul{
   
       a{
           text-decoration: none;  
-          color:orange;  
+          color:$colourlg;  
           padding: 0 32vw;       
         }
   
@@ -91,7 +93,7 @@ ul{
 
 
 #menu-toggle:checked + #navList{
-  visibility: visible;
+  // visibility: visible;
   display:flex;
   flex-direction: column;
   font-size: 1.6rem;
@@ -104,11 +106,14 @@ ul{
  /************** Nav Media Query ****************************/
  @media(min-width: "800px") { //large screens
        
+
+
+  
   #hmbMenu {
       display:none;
   }
 
-      #navList {
+      #navListLarge {
           visibility: visible;
           display: flex;
           flex-direction: row;
@@ -120,12 +125,27 @@ ul{
 
               li {
                   padding: 15px 15px 15px 1px;
-                  border: 1px solid $colourlg;
+                  // border: 1px solid $colourlg;
                   background: $colourlg;
+                 
               }
               li:hover {
-                  background: $colourmg;
-              }
+                  background: white;
+                  border-radius: 8px;
+                  box-shadow: inset $colourdg -1px -1px 1px;
+                  a { color: $colourgre;}
+                }
+
+                li:active {
+                  background: white;
+                  border-radius: 8px;
+                  box-shadow: inset $colourdg 1px 1px 1px;
+                 
+                  a { color: $colourdg;}
+                }
+
+
+
               a {
                   text-decoration: none;
                   color: $colourdg;
