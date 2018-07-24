@@ -111,19 +111,21 @@
 
     
 
-
+    <!-- class="contained90" -->
 
 
     <!-- ----------Gallery---------- -->
         
-        <h2 id="galleryHeader">GALLERY</h2>
+        <h2 id="galleryHeader" contained90>GALLERY</h2>
         
-        <section id="gallery" class="contained90">
+        <section id="galleryHome" >
             <!-- <img src="images/small/8.jpg" alt="" class="galImg" id="galImg1">
             <img src="images/small/9.jpg" alt="" class="galImg" id="galImg2"> -->
-
+            <img src="images/large/main_large.jpeg" alt="" class="galImg ">
             <img src="images/small/8.jpg" alt="" class="galImg" >
-            <img src="images/small/9.jpg" alt="" class="galImg">
+            <img src="images/small/9.jpg" alt="" class="galImg galImg2"  >
+            <img src="images/small/1.jpg" alt="" class="galImg galImg3 " >
+            <img src="images/small/11.jpg" alt="" class="galImg galImg4">
 
             <button id="galleryButton">See more..</button>
         </section>
@@ -137,13 +139,13 @@
 
 
     <!-- ----------Products---------- -->
-
+    <h2 id="productHeader">PRODUCTS</h2>
         <section id="contProducts">
-            <h2 id="productHeader">PRODUCTS</h2>
+           
 
-            <article class="product contained90" id="product1">
+            <article class="product " id="product1">
                 <h3>Portable chargers &amp; panels</h3>
-                <img src="images/small/13.jpg" alt="" class="fullImg prodImg">
+                <img src="images/small/13.jpg" alt="" class=" prodImg">
                 <p class="para">Thanks to a super-sized 40W solar panel charger, the Solaqua-mini offers a beefy 2.8A (Amps) of power capable
                     of re-charging smartphones, tablets and powering any outdoor devices such as electronic road signs, small
                     garden pumps and radios. Built-in to the Solaqua-mini is a 5V/2A charging port for a 5V gadget and a 18V
@@ -153,11 +155,23 @@
                 <button id="galleryButton">Buy Now</button>
             </article>
 
+                
+
+            <article class="product " id="product2">
+                <h3>Car charging station</h3>
+                <img src="images/large/charging_station_large.jpeg" alt="" class="  prodImg">
+                <p class="para">These products enable recharging of vehicles at charging points incorporating integrated renewable energy generation.
+                    This means that the energy used has reduced CO2 emissions as well as other pollutants. The 2kWh lithium battery
+                    Holds enough power to charge your car at night, and recharges the next day. This works out to be one of the
+                    most economic battery systems. </p>
+                <button>Buy Now</button>
+            </article>
 
 
-            <article class="product contained90" id="product2">
+
+            <article class="product " id="product3">
                 <h3>Ready made panels</h3>
-                <img src="images/small/8.jpg" alt="" class="fullImg prodImg">
+                <img src="images/small/8.jpg" alt="" class=" prodImg">
                 <p class="para">Meet Part L on houses up to 140m2 house for under €1000 Our Solar Photovoltaic (PV) panels convert daylight to
                     electricity efficiently No water, overheating or maintenance. The most economical way to meet the renewables
                     requirements under Part L of the building code. Easy to fit with no pipework or pumps.</p>
@@ -166,25 +180,14 @@
 
 
 
-            <article class="product contained90" id="product3">
+            <article class="product " id="product4">
                 <h3>Custom size panels</h3>
-                <img src="images/small/7.jpg" alt="" class="fullImg  prodImg">
+                <img src="images/small/7.jpg" alt="" class="  prodImg">
                 <p class="para">We provide customized solar energy solution to fit your product design and available space, while achieving required
                     power and efficiency. </p>
                 <button>Buy Now</button>
             </article>
 
-
-
-            <article class="product contained90" id="product4">
-                <h3>Car charging station</h3>
-                <img src="images/large/charging_station_large.jpeg" alt="" class="fullImg  prodImg">
-                <p class="para">These products enable recharging of vehicles at charging points incorporating integrated renewable energy generation.
-                    This means that the energy used has reduced CO2 emissions as well as other pollutants. The 2kWh lithium battery
-                    Holds enough power to charge your car at night, and recharges the next day. This works out to be one of the
-                    most economic battery systems. </p>
-                <button>Buy Now</button>
-            </article>
 
         </section>
         <!-- end of product section -->
@@ -268,8 +271,8 @@
            
            
            
-           <section>
-            <h1>GeoLocation</h1>
+           <section id='geo'>
+         
             <div id="geoWrapper">
             <label>Your Location is:</label>
             <br>
@@ -323,20 +326,16 @@
 
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="js/kontent.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXAZZRgEdZF-X8XyEINBhBF7vHHbJic-g&callback=initMap"></script>
-   
+
+    
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXAZZRgEdZF-X8XyEINBhBF7vHHbJic-g&v=3.32&callback=initMap"></script>
+
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXAZZRgEdZF-X8XyEINBhBF7vHHbJic-g&callback=initMap"></script> -->
+<script src="js/map.js"></script>
+
 <!-- <script src="js/js.js"></script> -->
-
-
-<!-- 
-<script>
-$(function() {
-    $('#contProducts').tabs();
-   
-}); //end file
-
-</script> -->
+<script src="js/kontent.js"></script>
 
 </body>
 

@@ -41,18 +41,23 @@ var $imageClicked=$('#gallery img');
 $imageClicked.click(galleryAddClickHandlers());
 
 
-
+var tempImg
 
 function galleryAddClickHandlers() {
     $('.galImg').click(function(e){
+      
         popup.toggle();
         popup.empty();
         popup.append( '<img src='    + 
         this.getAttribute('src')     +     '>' );
         console.log("galleryAddClickHandlers "+this);
-        var tempImg=this;
-        console.log("temp image= "+tempImg.getAttribute('class'))        ;
-        console.log("image Src= "+tempImg.getAttribute('src'))        ;
+        tempImg=this;
+          $('popup').css('width', "80vw");
+        // $('tempImg').css('max-width', "100%");
+        // center();
+        console.log("temp image class= "+tempImg.getAttribute('class'));
+        console.log("image Src= "+tempImg.getAttribute('src'));
+        console.log("tmpimg= "+tempImg);
     });
 }
  
@@ -60,11 +65,11 @@ function galleryAddClickHandlers() {
 
 
 function center(){
-        tempImg.css("position","absolute");
-      tempImg.css("top", Math.max(0, (($(window).height() - $(tempImg).outerHeight()) / 2) + 
+    $('tempImg').css("position","absolute");
+    $('tempImg').css("top", Math.max(0, (($(window).height() - $(tempImg).outerHeight()) / 2) + 
       $(window).scrollTop()) + "px");
 
-      tempImg.css("left", Math.max(0, (($(window).width() - $(tempImg).outerWidth()) / 2) + 
+      $('tempImg').css("left", Math.max(0, (($(window).width() - $(tempImg).outerWidth()) / 2) + 
       $(window).scrollLeft()) + "px");
 }
 
@@ -88,7 +93,7 @@ function center(){
 
 function onLoadProducts(){
     console.log("onLoadProducts");
-    $('#contProducts').tabs();
+    $('#contProductTabs').tabs();
 
 }
 
@@ -101,7 +106,7 @@ function onLoadGallery() {
 // Load More.. Button in gallery in index.html
 var $galleryBut= $('#galleryButton');
     $galleryBut.click(function(){
-        $('#gallery').load('gallery.html #gallery > *',null , onLoadGallery);
+        $('#galleryHome').load('gallery.html #gallery > *',null , onLoadGallery);
         console.log($galleryBut);
 });
 
@@ -187,10 +192,14 @@ submittednews.click(function(){
 
 
 
+
+
+
+
+
+
+
 /**** Map *****/
-
-
-
 
 var latText=document.getElementById('latitude');
 var longText=document.getElementById('longitude');
@@ -205,13 +214,13 @@ var navi=navigator.geolocation.getCurrentPosition(successCallback, errorCallback
 
 
 function successCallback(pos){
-lat=pos.coords.latitude;
-lng=pos.coords.longitude;
+    lat=pos.coords.latitude;
+    lng=pos.coords.longitude;
 
-latText.value=lat.toFixed(3);
-longText.value=lng.toFixed(3);
-latlng={Lat: lat, Lng: lng};
-console.log('No error..');
+    latText.value=lat.toFixed(3);
+    longText.value=lng.toFixed(3);
+    latlng={Lat: lat, Lng: lng};
+    console.log('No error..');
 }
 
 
@@ -223,11 +232,33 @@ function errorCallback(){
 
 
 
-function initMap(){
-    latlng=new google.maps.LatLng(lat,  lng);
-    map=new google.maps.Map(document.getElementById('mapDiv'), {zoom: 16, center: latlng});
-    marker=new google.maps.Marker({position: latlng, map: map});
-}
+// function initMap(){
+   
+   
+//     latlng=new google.maps.LatLng(lat,  lng);
+//     map=new google.maps.Map(document.getElementById('mapDiv'), {zoom: 16, center: latlng});
+//     marker=new google.maps.Marker({position: latlng, map: map});
+// }
+
+
+
+
+function initMap(){}
+
+
+$(() => {
+    initMap = function() {
+      // your code like...
+     
+        map=new google.maps.Map(document.getElementById('mapDiv'), {zoom: 16, center: latlng});
+        marker=new google.maps.Marker({position: latlng, map: map});
+
+      };
+      // and other stuff...
+    });
+ 
+   
+    
 
 
 

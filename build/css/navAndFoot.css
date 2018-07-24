@@ -172,5 +172,11 @@ footer {
     footer #policyFooter li {
       padding: 0 0 10px 0; }
 
+#mapDiv {
+  background: lightblue;
+  margin: 4%;
+  width: 200px;
+  height: 200px; }
+
 /****End Footer********/
 /************End Of Nav.css***************/

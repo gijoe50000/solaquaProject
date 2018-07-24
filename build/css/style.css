@@ -7,6 +7,9 @@
   margin: 0;
   padding: 0; }
 
+.galImg2, .galImg3, .galImg4 {
+  display: none; }
+
 body {
   font-size: 10px;
   font-family: 'Open Sans', sans-serif;
@@ -47,7 +50,8 @@ h2 {
   font-family: Raleway;
   font-size: 3rem;
   font-weight: 900;
-  padding: 100px 0 30px 0; }
+  padding: 100px 0 30px 0;
+  text-shadow: 1px 1px 4px #DFDCDC; }
 
 h3 {
   font-family: Montserrat;
@@ -80,19 +84,9 @@ button {
 .para {
   font-size: 1.2rem;
   line-height: 1.2;
-  margin: 20px 6vw;
+  margin: 20px 2rem;
   padding: 50px 20px 100px 20px;
   font-weight: 100; }
-
-.product {
-  background: #DFDCDC;
-  padding-bottom: 6px;
-  margin-bottom: 60px; }
-
-.productsPageSizing {
-  width: 90vw;
-  max-width: 1620px;
-  margin: 0 auto; }
 
 #bkimg2 {
   background-image: url("../images/large/skyLarge2cropMore.jpg");
@@ -103,11 +97,20 @@ button {
   overflow: hidden; }
 
 /************Gallery Page.css***************/
+#galleryHome {
+  box-shadow: inset #6E6E6E 8px 8px 100px 3px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 30px;
+  padding: 50px;
+  margin: 20px auto; }
+
 #gallery {
   box-shadow: inset #6E6E6E 8px 8px 100px 3px;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 30px;
   padding: 50px;
   margin: 20px auto;
@@ -115,25 +118,55 @@ button {
 
 #popup {
   display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
   position: fixed;
   top: 40px;
+  margin: 10vh 10vw;
   z-index: 1;
-  padding: 30px; }
+  border: 2px solid black; }
 
 #close {
   float: right;
   right: 10px; }
 
 .galImg {
-  max-width: 70%;
+  text-align: center;
+  max-width: 100%;
   max-height: 70%;
   overflow: hidden;
   border: 2px solid black; }
 
 /************End Gallery Page***************/
+#contProducts {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
+  grid-gap: 50px;
+  margin: 10px auto; }
+
+.product {
+  background: #DFDCDC;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  min-width: 320px;
+  max-width: 1950px;
+  margin: 5px;
+  border: #41E800 solid 2px;
+  box-shadow: 1px 1px 15px 3px #6E6E6E;
+  border-radius: 0.3%; }
+
+.prodImg {
+  max-width: 100%; }
+
 /************End Of Style***************/
 /************** Gallery Media Query ****************************/
 @media (min-width: 800px) {
+  .galImg2 {
+    display: inline-block; }
   #galleryHeader {
     grid-row: 1;
     grid-column: 1/3; }
@@ -147,3 +180,7 @@ button {
   .prodImg {
     border-left: 25px solid #DFDCDC;
     border-right: 25px solid #DFDCDC; } }
+
+@media (min-width: 1200px) {
+  .galImg3, .galImg4 {
+    display: inline-block; } }
