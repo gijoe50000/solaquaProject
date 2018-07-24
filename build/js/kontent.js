@@ -140,15 +140,30 @@ var $aboutBut=$('.aboutButton');
 
 
 var $newsBut=$('.newsButton');
-    $newsBut.click(function(){
-$('main').load('news.html main > *');
+    
+$newsBut.click(function(){
+    console.log("news button clicked");
+    $('main').load('news.html main > *', null, function(){
+        console.log("news button clicked");
+
+    });
+
 });
 
 
 var $contactBut=$('.contactButton');
-    $contactBut.click(function(){
-$('main').load('contact.html main > *');
-});
+    
+$contactBut.click(function(){
+        $('main').load('contact.html main > *', null, function(){
+                    console.log("Contact Page, Finished loading");
+                    var submitted=$('#submitContact');
+                    submitted.click(function(){
+                        alert("Submit Success!");
+                        console.log("submit clicked");
+                    });
+        });
+
+    });
 
 
 
