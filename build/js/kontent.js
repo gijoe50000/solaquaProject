@@ -164,8 +164,8 @@ submitted.click(function(){
 
 
 
-var submitted=$('#submitNewsletter');
-submitted.click(function(){
+var submittednews=$('#submitNewsletter');
+submittednews.click(function(){
     alert("Submit Success!");
     console.log("submit clicked");
 });
