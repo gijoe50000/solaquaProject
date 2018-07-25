@@ -76,9 +76,8 @@ ul{
 
   
       a{
-          // text-decoration: none;  
           color:$colourlg;  
-          padding: 0 32vw;       
+          // padding: 0 32vw;       
         }
   
       li{
@@ -86,9 +85,8 @@ ul{
           border:1px solid $colourlg;
           background: rgba(80,80,80,0.85);
           padding:20px 0;
-         
-         
       }
+
       li:hover{ 
           background: $colourdg;       
       }

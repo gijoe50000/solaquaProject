@@ -49,8 +49,7 @@ ul {
   font-size: 1.6rem;
   background: rgba(110, 110, 110, 0.7); }
   #navList a {
-    color: #E5E5E5;
-    padding: 0 32vw; }
+    color: #E5E5E5; }
   #navList li {
     padding: 15px 35px 15px 35px;
     border: 1px solid #E5E5E5;
