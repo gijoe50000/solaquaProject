@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  text-decoration: none; }
+
 nav {
   display: flex;
   flex-direction: row;
@@ -36,6 +39,7 @@ ul {
   visibility: hidden; }
 
 #navList {
+  display: none;
   position: fixed;
   right: 0px;
   top: 80px;
@@ -45,7 +49,6 @@ ul {
   font-size: 1.6rem;
   background: rgba(110, 110, 110, 0.7); }
   #navList a {
-    text-decoration: none;
     color: #E5E5E5;
     padding: 0 32vw; }
   #navList li {
@@ -91,7 +94,6 @@ ul {
       #navListLarge li:active a {
         color: #6E6E6E; }
     #navListLarge a {
-      text-decoration: none;
       color: #6E6E6E;
       font-size: 1.6rem;
       padding: 0 10px; } }
@@ -152,17 +154,23 @@ footer {
         width: auto; }
     footer #footerGrid #navFooter {
       margin-top: 15px;
-      align-self: start; }
+      align-self: start;
+      text-align: left; }
       footer #footerGrid #navFooter li {
         font-size: 1.0rem;
-        line-height: 1;
-        padding: 6px; }
+        line-height: 1.6;
+        padding: 6px;
+        border-bottom: #6E6E6E 1px solid;
+        max-width: 120px; }
+        footer #footerGrid #navFooter li a {
+          color: #6E6E6E; }
     footer #footerGrid #logos {
       align-self: end;
       margin-top: 10px; }
       footer #footerGrid #logos img {
         padding: 0 10px; }
   footer #policyFooter {
+    font-size: 1.0rem;
     min-width: 100%;
     display: flex;
     flex-direction: row;

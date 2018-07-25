@@ -6,6 +6,8 @@ $colourblu:#0040FF;
 $colourbla:#111;
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+*{
+text-decoration: none;  }
 //for small
 nav{
   display:flex;
@@ -62,6 +64,7 @@ ul{
 
 //smaller screens
   #navList{
+    display:none;
     position:fixed;
     right:0px;
     top:80px;
@@ -73,7 +76,7 @@ ul{
 
   
       a{
-          text-decoration: none;  
+          // text-decoration: none;  
           color:$colourlg;  
           padding: 0 32vw;       
         }
@@ -147,7 +150,7 @@ ul{
 
 
               a {
-                  text-decoration: none;
+                  // text-decoration: none;
                   color: $colourdg;
                   font-size: 1.6rem;
                   padding: 0 10px;
@@ -178,8 +181,8 @@ footer{
 
       
         #footAddress{
-          margin-top:15px;
-          align-self: start;
+            margin-top:15px;
+            align-self: start;
             font-size: 1.0rem;
             line-height: 1.2;
         }
@@ -247,10 +250,16 @@ footer{
         #navFooter{
             margin-top:15px;
             align-self: start;
+            text-align: left;
               li {
                   font-size: 1.0rem;
-                  line-height:1;
+                  line-height:1.6;
                   padding:6px;
+                  border-bottom: $colourdg 1px solid;
+                  
+                  max-width: 120px;
+                  
+                  a{color: $colourdg;}
                   }
           }
 
@@ -272,7 +281,8 @@ footer{
 
 
 
-          #policyFooter{            
+          #policyFooter{      
+            font-size: 1.0rem;      
               min-width: 100%;
               display:flex;
               flex-direction: row;

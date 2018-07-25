@@ -2,8 +2,8 @@
 
 /**** Map *****/
 
-var latText=document.getElementById('latitude');
-var longText=document.getElementById('longitude');
+// var latText=document.getElementById('latitude');
+// var longText=document.getElementById('longitude');
 var lat;
 var lng;
 var latlng={};
@@ -18,8 +18,8 @@ function successCallback(pos){
     lat=pos.coords.latitude;
     lng=pos.coords.longitude;
 
-    latText.value=lat.toFixed(3);
-    longText.value=lng.toFixed(3);
+    // latText.value=lat.toFixed(3);
+    // longText.value=lng.toFixed(3);
     latlng={Lat: lat, Lng: lng};
     console.log('No error..');
 }
@@ -32,12 +32,9 @@ function errorCallback(){
 
 
 
-
 function initMap(){
-   
-   
     latlng=new google.maps.LatLng(lat,  lng);
-    map=new google.maps.Map(document.getElementById('mapDiv'), {zoom: 16, center: latlng});
+    map=new google.maps.Map(document.getElementById('mapDiv'), {center: latlng, zoom: 16});
     marker=new google.maps.Marker({position: latlng, map: map});
 }
 

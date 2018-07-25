@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;  
 }
 
 $colourlg:#E5E5E5;
@@ -187,7 +188,7 @@ button {
     max-width:90vw;
     max-height:90vh; 
     // background:$colourlg;
-    position:fixed;
+    position:relative;
     top:40px;
     // // margin: 10vh 10vw;
     // margin: 20vh 30vw;
@@ -196,6 +197,7 @@ button {
     z-index:1;
     // padding:30px;
     border: 2px solid black;
+    z-index: 2;
 }
 
 //x for popup gallery image
@@ -236,6 +238,9 @@ button {
 
 
 .product {
+  
+    display:flex;
+    flex-direction: column;
     background: $colourmg;
     padding-bottom: 6px;
     margin-bottom: 10px;
@@ -245,6 +250,13 @@ button {
     border: $colourgre solid 2px;
     box-shadow: 1px 1px 15px 3px $colourdg;
     border-radius: 0.3%;
+    p{
+        flex-grow: 1;
+    }
+button{
+//   align-self: flex-end;
+}
+//    justify-content: space-between;
 }
 
 

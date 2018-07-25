@@ -159,16 +159,106 @@ $newsBut.click(function(){
 var $contactBut=$('.contactButton');
     
 $contactBut.click(function(){
-        $('main').load('contact.html main > *', null, function(){
-                    console.log("Contact Page, Finished loading");
-                    var submitted=$('#submitContact');
-                    submitted.click(function(){
-                        alert("Submit Success!");
-                        console.log("submit clicked");
-                    });
-        });
-
+      openContactPage();
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function openContactPage (prod){
+    $('main').load('contact.html main > *', null, function(){
+        console.log("Contact Page, Finished loading");
+        console.log("prod= "+prod);
+        selectProdOption(prod);
+
+        var submitted=$('#submitContact');
+        submitted.click(function(){
+            alert("Submit Success!");
+            console.log("submit clicked");
+        });
+});
+}
+
+
+
+
+
+
+
+
+
+    
+/*************************** products **********************/
+
+var buyBut=$('.buyNow');
+    buyBut.click(function(but){
+        var prod=$(this).attr("id");    //   buyBut.parent().attr('id'); 
+        // console.log(buyBut.parent().attr('id'));
+        console.log('prod='+prod);
+        openContactPage(prod);
+    });
+
+
+
+
+
+function selectProdOption(prod){
+
+    console.log( ' prod = ' +  prod );
+
+    
+    prodList=$('#productList');
+    options=$('#productList > option');
+// = $('#productList > option').attr('value') ;
+    prodList.val(prod);
+    // options.each(function(index,el){
+    //         // this is the current option
+
+    //     console.log("option this= " + this);
+
+    //     currentitem=el.value;
+    //     el = $(el); // wrap in jq obj
+
+    //     // console.log('options= '+ options);
+    //     if(prod == currentitem){
+    //         el.attr('selected',"true");
+    //     }
+    // });
+// console.log("myProduct="+ $('productList > option').attr('value'));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,33 +291,33 @@ submittednews.click(function(){
 
 /**** Map *****/
 
-var latText=document.getElementById('latitude');
-var longText=document.getElementById('longitude');
-var lat;
-var lng;
-var latlng={};
-var map;
-var marker;
+// var latText=document.getElementById('latitude');
+// var longText=document.getElementById('longitude');
+// var lat;
+// var lng;
+// var latlng={};
+// var map;
+// var marker;
 
 
-var navi=navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+// var navi=navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 
-function successCallback(pos){
-    lat=pos.coords.latitude;
-    lng=pos.coords.longitude;
+// function successCallback(pos){
+//     lat=pos.coords.latitude;
+//     lng=pos.coords.longitude;
 
-    latText.value=lat.toFixed(3);
-    longText.value=lng.toFixed(3);
-    latlng={Lat: lat, Lng: lng};
-    console.log('No error..');
-}
+//     latText.value=lat.toFixed(3);
+//     longText.value=lng.toFixed(3);
+//     latlng={Lat: lat, Lng: lng};
+//     console.log('No error..');
+// }
 
 
 
-function errorCallback(){
-    console.log('error!!!!!!');
-}
+// function errorCallback(){
+//     console.log('error!!!!!!');
+// }
 
 
 
@@ -243,19 +333,19 @@ function errorCallback(){
 
 
 
-function initMap(){}
+// function initMap(){}
 
 
-$(() => {
-    initMap = function() {
-      // your code like...
+// $(() => {
+//     initMap = function() {
+//       // your code like...
      
-        map=new google.maps.Map(document.getElementById('mapDiv'), {zoom: 16, center: latlng});
-        marker=new google.maps.Marker({position: latlng, map: map});
+//         map=new google.maps.Map(document.getElementById('mapDiv'), {zoom: 16, center: latlng});
+//         marker=new google.maps.Marker({position: latlng, map: map});
 
-      };
-      // and other stuff...
-    });
+//       };
+//       // and other stuff...
+//     });
  
    
     
