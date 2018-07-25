@@ -14,50 +14,22 @@
 </head >
 
    
-<nav id="home">
-    <img src="images/logo/logoAndOutline.png" alt="logo" id="logo" width="80" height="80">
-    
-    <label for="menu-toggle" id="hmbMenu">&#9776</label>
-        <input type="checkbox"  id="menu-toggle">
-
-
-    <ul id="navList">
-        <li class="home">  <a href="index.html">Home</a>       </li>
-        <li class="gal">  <a href="gallery.html">Gallery</a>   </li>
-        <li class="prod">  <a href="products.html">Products</a></li>
-        <li class="news">  <a href="news.html">News</a>        </li>
-        <li class="about">  <a href="aboutus.html">About Us</a></li>
-        <li class="cont">  <a href="contact.html">Contact</a>  </li>
-    </ul>
-
-    <!-- <img src="images/ico/sunny.svg" alt="placeholder for restapi" id="test" width="80"> -->
-</nav>
-
-
-
-
-
-
-
-
     <main id="contactMain">
-
-
-         
-    
-    
-    
+  
     
     <!-- Form -->
             <form name="contact" action="/cgibin" method="GET" id="formContact" netlify>
                 <h2 >Contact Us</h2>
                 
-                <p id="para1">If you want to purchase a product enter the product code, if you were automatically redirected here from the product
+                <p id="para1">If you want to order a product enter the product code, if you were automatically redirected here from the product
                     page then this will be filled out already. For installations, enter a date and time that suits you, and we will
                     contact you shortly to confirm.</p>
         
         
                 
+                
+                <label id= "labOrder" for="checkbox">Do you want to order a product?</label>
+                <input id= "inpCheck" type="checkbox" name="checkbox">
                 
                 
                 <label id= "labname" for="name">Name:</label>
@@ -66,9 +38,7 @@
                 <label id= "labadd" for="address">Address:
                     <br>(optional)</label>
                 <input id= "inpadd" type="text" name="address">
-    
-    
-                <input id= "inpadd2" type="text" name="address2">
+                 <input id= "inpadd2" type="text" name="address2">
     
     
                 <input id= "inpadd3" type="text" name="address3">
@@ -103,7 +73,7 @@
                 </select>
                 
                 
-                <input type="button" value="submit" name="submit" id="submitContact">
+                <input type="button" value="Send" name="submit" id="submitContact" class= " formBut hoverBut">
                 <!-- <a href="#home"><img src="images/ico/bttIcon.svg" alt="" width="40" id="backToTop"></a> -->
 
                 <p id= "askQ" class="boldTextContact">If you have any questions, 

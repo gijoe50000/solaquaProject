@@ -20,7 +20,6 @@ $colourbla:#111;
     grid-row-gap: 15px;
     max-width: 400px;
     margin:0 auto;
-    // border:3px black solid;
 
     h2{
         grid-column: 1/13;
@@ -36,61 +35,65 @@ $colourbla:#111;
     }
 
 
-    #labname{ grid-column: 1/7;
+
+    #labOrder{ grid-column: 1/7;
         grid-row: 3;}
-    #labadd{ grid-column: 1/7;
+
+    #labname{ grid-column: 1/7;
         grid-row: 4;}
+    #labadd{ grid-column: 1/7;
+        grid-row: 5;}
     #labtel{ grid-column: 1/7;
-        grid-row: 7;}
-    #labmail{ grid-column: 1/7;
         grid-row: 8;}
-    #labcomment{ grid-column: 1/7;
+    #labmail{ grid-column: 1/7;
         grid-row: 9;}
+    #labcomment{ grid-column: 1/7;
+        grid-row: 10;}
 
 
     #inpname{ grid-column: 7/13;
-        grid-row: 3;}
-    #inpadd{ grid-column: 7/13;
         grid-row: 4;}
-    #inpadd2{ grid-column: 7/13;
+    #inpadd{ grid-column: 7/13;
         grid-row: 5;}
-    #inpadd3{ grid-column: 7/13;
+    #inpadd2{ grid-column: 7/13;
         grid-row: 6;}
-    #inptel{ grid-column: 7/12;
+    #inpadd3{ grid-column: 7/13;
         grid-row: 7;}
-    #inpmail{ grid-column: 7/12;
+    #inptel{ grid-column: 7/12;
         grid-row: 8;}
-    #inpcomment{ grid-column: 7/12;
+    #inpmail{ grid-column: 7/12;
         grid-row: 9;}
+    #inpcomment{ grid-column: 7/12;
+        grid-row: 10;}
 
 
     .italctext{
         grid-column: 1/13;
-        grid-row: 10; }
+        grid-row: 12; }
 
     #labinstallDate{ grid-column: 3/7;
-        grid-row: 11;}
+        grid-row: 13;}
     
         #installDate{ grid-column: 7/12;
-        grid-row: 11;}
+        grid-row: 13;}
 
 
     #labproductList{ grid-column: 3/7;
-        grid-row: 12;}
+        grid-row: 14;}
     
         #productList{ grid-column: 7/12;
-        grid-row: 12;}
+        grid-row: 14;}
     
     #submitContact{
         grid-column: 5/8;
-        grid-row: 13;
+        grid-row: 16;
         margin: 30px 0 30px 0;
         justify-self: center;
     }
     
         #askQ{
         grid-column: 3/10;
-        grid-row: 14;}
+        grid-row: 15;}
 
         .boldTextContact{
             font-weight: bold;
