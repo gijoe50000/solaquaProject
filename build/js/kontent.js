@@ -8,18 +8,11 @@ navList.hide();
 
 navList.click('slow', function(){
     navList.hide();
-    console.log("blah hide "+this);
-
 });
-
 
 showMenu.click('slow', function(){
     $('#navList').toggle();
 });
-
-
-
-
 
 
 
@@ -48,28 +41,12 @@ function galleryAddClickHandlers() {
         popup.empty();
         popup.append( '<img src='    + 
         this.getAttribute('src')     +     '>' );
-        console.log("galleryAddClickHandlers "+this);
-        tempImg=this;
-          $('popup').css('width', "80vw");
-        // $('tempImg').css('max-width', "100%");
-        // center();
-        console.log("temp image class= "+tempImg.getAttribute('class'));
-        console.log("image Src= "+tempImg.getAttribute('src'));
-        console.log("tmpimg= "+tempImg);
-    });
+      });
 }
  
 
 
 
-function center(){
-    $('tempImg').css("position","absolute");
-    $('tempImg').css("top", Math.max(0, (($(window).height() - $(tempImg).outerHeight()) / 2) + 
-      $(window).scrollTop()) + "px");
-
-      $('tempImg').css("left", Math.max(0, (($(window).width() - $(tempImg).outerWidth()) / 2) + 
-      $(window).scrollLeft()) + "px");
-}
 
 /* End of Gallery images popup*/ 
 
@@ -88,17 +65,22 @@ $('#inpadd').hide();
 
 
 
-/***************************************/
+/*******************AJAX Load pages into main********************/
 
 
 
+// Load More.. Button in gallery in index.html
+var $galleryBut= $('#galleryButton');
+    $galleryBut.click(function(){
+        $('#galleryHome').load('gallery.html #gallery > *',null , onLoadGallery);
+        console.log($galleryBut);
+});
 
 
 
 function onLoadProducts(){
     console.log("onLoadProducts");
     $('#contProductTabs').tabs();
-
 }
 
 
@@ -107,12 +89,6 @@ function onLoadGallery() {
     galleryAddClickHandlers();
 }
 
-// Load More.. Button in gallery in index.html
-var $galleryBut= $('#galleryButton');
-    $galleryBut.click(function(){
-        $('#galleryHome').load('gallery.html #gallery > *',null , onLoadGallery);
-        console.log($galleryBut);
-});
 
 
 
@@ -125,7 +101,7 @@ var $homeBut=$('.homeButton');
 // load full gallery page using AJAX
 var $galBut= $('.galButton');
     $galBut.click(function(){
-        $('main').load('gallery.html #gallery > *', null, onLoadGallery);
+        $('main').load('gallery.html #mainGallery > *', null, onLoadGallery);
         console.log($galBut);
 });
 
@@ -148,20 +124,38 @@ var $aboutBut=$('.aboutButton');
 
 
 
+// var $newsBut=$('.newsButton');
+//     $newsBut.click(function(){
+//         console.log("news button clicked");
+//         $('main').load('news.html main > *', null, function(){
+//         console.log("news button clicked");
+//     });
+// });
+
+
+
+
+
+
+
+
 var $newsBut=$('.newsButton');
-    
-$newsBut.click(function(){
-    console.log("news button clicked");
-    $('main').load('news.html main > *', null, function(){
-        console.log("news button clicked");
-
-    });
-
+    $newsBut.click(function(){
+    $('main').load('news.html main > *', null, loadNewsScript
+    );
 });
 
 
+function loadNewsScript(){
+  $.getScript("js/RSSScript.js",null);
+  $.getScript("//feed.surfing-waves.com/js/rss-feed.js",null);
+
+}
+
+
+
+
 var $contactBut=$('.contactButton');
-    
 $contactBut.click(function(){
       openContactPage();
     });
@@ -200,13 +194,9 @@ var buyBut=$('.buyNow');
     });
 
 
-    
-
-
 function openContactPage (prod){
     $('main').load('contact.html main > *', null, function(){
         selectProdOption(prod);
-
         var submitted=$('#submitContact');
         
         submitted.click(function(){
@@ -223,10 +213,6 @@ function selectProdOption(prod){
     options=$('#productList > option');
     prodList.val(prod);
 }
-
-
-
-
 
 
 

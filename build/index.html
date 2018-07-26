@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/_reset.css">
-  
     <link rel="shortcut icon" href="/build/images/logo/logoAndOutline.png" type="image/x-icon">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.structure.css">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.theme.css">
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navAndFoot.css"> 
     <link rel="stylesheet" href="css/contact.css">
@@ -18,34 +16,37 @@
     <title>Solaqua</title>
 </head>
 
+<div id="cookieBanner">
+    <h3 id="cookieHeader">Cookie Notice</h1>
+    <p class="cookiePara ">Do you want accept cookies?
+    </p>
+    <button id="accept" class="cookieButton hoverBut">Accept</button>
+    <button id="decline" class="cookieButton hoverBut">Decline</button>
+</div>
 
 
 <nav id="home">
    <a href="index.html#home"> <img src="images/logo/logoAndOutline.png" alt="logo" id="logo" width="80" height="80"></a>
 
     <label for="menu-toggle" id="hmbMenu">&#9776</label>
-    <!-- <input type="checkbox" id="menu-toggle"> -->
-    <!-- class='navListLarge navListSmall navList' -->
 
-    <ul id="navListLarge"  >
+    <ul id="navListLarge">
         <li class=="homeButton">  <a href="index.html">Home</a></li>
-        <!-- <li class="galButton">     <a href="#">Gallery</a>    </li> -->
-        <li class="galButton">     Gallery  </li>
-        <li class="prodButton">  <a href="#">Products</a></li>        
-        <li class="newsButton">  <a href="#">News</a>        </li>
-        <li class="aboutButton">  <a href="#">About Us</a></li>
-        <li class="contactButton">  <a href="#">Contact</a>  </li>
-       
+        <li class="galButton">    <a href="#Gallery">Gallery</a> </li>
+        <li class="prodButton">   <a href="#Products">Products</a></li>        
+        <li class="newsButton">   <a href="#News">News</a>  </li>
+        <li class="aboutButton">  <a href="#About">About Us</a></li>
+        <li class="contactButton"><a href="#Contact">Contact</a>  </li>
     </ul>
 
 
     <ul id="navList"  >
-        <li class=="homeButton">  <a href="index.html">Home</a></li>
-        <li class="galButton">     <a href="#">Gallery</a>    </li>
-        <li class="prodButton">  <a href="#">Products</a></li>        
-        <li class"newsButton">  <a href="#">News</a>        </li>
-        <li class="aboutButton">  <a href="#">About Us</a></li>
-        <li class="contactButton">  <a href="#">Contact</a>  </li>
+            <li class=="homeButton">  <a href="index.html">Home</a></li>
+            <li class="galButton">    <a href="#Gallery">Gallery</a> </li>
+            <li class="prodButton">   <a href="#Products">Products</a></li>        
+            <li class="newsButton">   <a href="#News">News</a>  </li>
+            <li class="aboutButton">  <a href="#About">About Us</a></li>
+            <li class="contactButton"><a href="#Contact">Contact</a>  </li>
     </ul>
 
     <!-- <img src="images/ico/sunny.svg" alt="placeholder for restapi" id="test" width="80"> -->
@@ -59,35 +60,20 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
     <img src="images/large/main_large.jpeg" alt="" class="fullImg">
     <h1 id="mainHeadingGreen"> 70% of your hot water for
         <span id="free">free!</span>
     </h1>
 
     <article>
-
         <h3>On average SOLAQUA can provide up to 70% of your hot water for free! </h3>
-
         <p class="para">Many people believe that Solar Panels in Ireland only work during the summer, however this type of free energy is
             available throughout the year. Our solar panels can produce all the energy required for heating your domestic
             water. The Solaqua collector operates not just with direct sunlight, but also diffused sunlight, so they even
             work on cloudy days.</p>
         <div id="bkimg2"></div>
         <h3>Solar Charging Station for a full charge every morning. </h3>
-      
-
     </article>
-
 
 
     <article>
@@ -110,33 +96,22 @@
         </p>
     </article>
 
-    
 
-    <!-- class="contained90" -->
+
 
 
     <!-- ----------Gallery---------- -->
-        
+    <div id="popup" visibility='hidden'></div>
         <h2 id="galleryHeader" contained90>GALLERY</h2>
-        
+    
         <section id="galleryHome" >
-            <!-- <img src="images/small/8.jpg" alt="" class="galImg" id="galImg1">
-            <img src="images/small/9.jpg" alt="" class="galImg" id="galImg2"> -->
             <img src="images/large/main_large.jpeg" alt="" class="galImg ">
             <img src="images/small/8.jpg" alt="" class="galImg" >
             <img src="images/small/9.jpg" alt="" class="galImg galImg2"  >
             <img src="images/small/1.jpg" alt="" class="galImg galImg3 " >
             <img src="images/small/11.jpg" alt="" class="galImg galImg4">
-        
-<button id="galleryButton" class="hoverBut">See More..</button>
-            
-<div id="popup" visibility='hidden'></div>
-         
+             <button id="galleryButton" class="hoverBut">See More..</button> 
         </section>
-
-
-
-
 
 
 
@@ -145,10 +120,8 @@
     <!--Products-->
     <h2 id="productHeader">PRODUCTS</h2>
         <section id="contProducts">
-           
 
             <article class="product myBorder " id="charging">
-              
                 <h3>Portable chargers &amp; panels</h3>
                 <img src="images/small/13.jpg" alt="" class=" prodImg">
                 <p class="para">Thanks to a super-sized 40W solar panel charger, the Solaqua-mini offers a beefy 2.8A (Amps) of power capable
@@ -225,18 +198,11 @@
 
 
 <footer>
-    
           
     <div id="mapDiv"></div>
+
     <div id="footerGrid">
-        
-       
-
-
-
-
         <section id="contact" class="padding_foot">
-            <!-- <h2 id="contactHeader">CONTACT</h2> -->
             <p id="footAddress">
                 Solaqua,
                 <br> Unit 6A,
@@ -249,41 +215,33 @@
                 <br>info@solaqua.com
             </p>
             <div id='logos'>
-                    <img src="images/logo/qa.jpg" alt="qa logo" id="logoQa" width="40">
-                    <img src="images/logo/iso.png" alt="iso standard logo" id="logoIso" width="40">
-                    <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
+                <img src="images/logo/qa.jpg" alt="qa logo" id="logoQa" width="40">
+                <img src="images/logo/iso.png" alt="iso standard logo" id="logoIso" width="40">
+                <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
             </div>
         </section>
 
 
         <form  name="newsLetter"action="/cgibin" method="GET" id="newsletter" class="  myBorder padding_foot" netlify>
             <h4 id="nlhead">SIGN UP FOR NEWSLETTER</h4>
-
             <div id="formInput">
                 <label id="labeln" for="name">Name:</label>
                 <input id="inputn" type="text" name="name">
                 <label id="labele" for="email">Email:</label>
                 <input id="inpute" type="email" name="email">
             </div>
-            
             <input type="button" value="Subscribe" name="submit" id="submitNewsletter" class=" formBut hoverBut">
         </form>
 
 
-
-
-                
-
         <ul id="navFooter" class="padding_foot">
-            <li class=="homeButton">  <a href="index.html">Home</a></li>
-            <li class="galButton">     <a href="#">Gallery</a>    </li>
-            <li class="prodButton">  <a href="#">Products</a></li>        
-            <li class="newsButton">  <a href="#">News</a>        </li>
-            <li class="aboutButton">  <a href="#">About Us</a></li>
-            <li class="contactButton">  <a href="#">Contact</a>  </li>
+                <li class=="homeButton">  <a href="index.html">Home</a></li>
+                <li class="galButton">    <a href="#Gallery">Gallery</a> </li>
+                <li class="prodButton">   <a href="#Products">Products</a></li>        
+                <li class="newsButton">   <a href="#News">News</a>  </li>
+                <li class="aboutButton">  <a href="#About">About Us</a></li>
+                <li class="contactButton"><a href="#Contact">Contact</a>  </li>
         </ul>
-
-
 
          <ul id="policyFooter" class="padding_foot">
             <li>  <a href="#tandc.html">Terms and Conditions </a>  </li>
@@ -291,22 +249,18 @@
             <li>  <a href="Privacy_Policy.html">Privacy Policy</a> </li>
             <li>  <a href="site_Map.html">Sitemap</a>        </li>    
         </ul>
-
     </div>       <!-- footer Grid -->
-
 </footer>
 
+<script src="js/cookieBanner.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 
     
 
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXAZZRgEdZF-X8XyEINBhBF7vHHbJic-g&v=3.32&callback=initMap"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkMjmHf-RO698y7xxC4Aw6SlWusOOFm8&callback=initMap"
     async defer></script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXAZZRgEdZF-X8XyEINBhBF7vHHbJic-g&callback=initMap"></script> -->
 <script src="js/map.js"></script>
-
 <!-- <script src="js/js.js"></script> -->
 <script src="js/kontent.js"></script>
 

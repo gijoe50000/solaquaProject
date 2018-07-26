@@ -1,15 +1,17 @@
 rssfeed_url = new Array(); 
 rssfeed_url[0]="https://feeds.feedburner.com/SolarEnergyrssFeed";  
-rssfeed_frame_width="60%"; 
+rssfeed_frame_width="80%"; 
 rssfeed_frame_height="800"; 
 rssfeed_scroll="on"; 
-rssfeed_scroll_step="6"; 
+rssfeed_scroll_step="3"; 
 rssfeed_scroll_bar="off"; 
 rssfeed_target="_blank"; 
-rssfeed_font_size="16"; 
+rssfeed_font_size="24"; 
 rssfeed_font_face="open-sans, sans-serif"; 
 rssfeed_border="on"; 
 rssfeed_css_url="https://feed.surfing-waves.com/css/style7.css"; 
+rssfeed_css_url="/style.css"; 
+
 rssfeed_title="on"; 
 rssfeed_title_name=""; 
 // rssfeed_title_bgcolor="#3366ff"; 
