@@ -10505,16 +10505,24 @@ $('#inpadd').hide();
 
 
 
-/*******************AJAX********************/
+/*******************AJAX Load pages into main********************/
 
 
 
-// "See More".. Button in gallery in index.html
+// Load More.. Button in gallery in index.html
 var $galleryBut= $('#galleryButton');
     $galleryBut.click(function(){
         $('#galleryHome').load('gallery.html #gallery > *',null , onLoadGallery);
         console.log($galleryBut);
 });
+
+
+
+function onLoadProducts(){
+    console.log("onLoadProducts");
+    $('#contProductTabs').tabs();
+}
+
 
 function onLoadGallery() {
     console.log("onLoadGallery");
@@ -10523,16 +10531,6 @@ function onLoadGallery() {
 
 
 
-function onLoadProducts(){
-    console.log("onLoadProducts");
-    $('#contProductTabs').tabs();
-    productClickHandler();
-    console.log("onLoadProducts after handler");
-}
-
-
-
-/********** load pages from menu using AJAX ********/
 
 var $homeBut=$('.homeButton');
     $homeBut.click(function(){
@@ -10540,21 +10538,32 @@ var $homeBut=$('.homeButton');
 
 });
 
+// load full gallery page using AJAX
 var $galBut= $('.galButton');
     $galBut.click(function(){
         $('main').load('gallery.html #mainGallery > *', null, onLoadGallery);
         console.log('Gal page loaded');
 });
 
+
+
+
 var $prodBut=$('.prodButton');
     $prodBut.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
    });
 
+
+
+
 var $aboutBut=$('.aboutButton');
     $aboutBut.click(function(){
     $('main').load('aboutus.html main > *');
 });
+
+
+
+
 
 
 var $newsBut=$('.newsButton');
@@ -10563,18 +10572,20 @@ var $newsBut=$('.newsButton');
     );
 });
 
+
 function loadNewsScript(){
   $.getScript("js/RSSScript.js",null);
   $.getScript("//feed.surfing-waves.com/js/rss-feed.js",null);
 
 }
 
+
+
+
 var $contactBut=$('.contactButton');
 $contactBut.click(function(){
       openContactPage();
     });
-  
-  /********** END OF load pages from menu using AJAX ********/
 
 
 
@@ -10586,38 +10597,29 @@ $contactBut.click(function(){
     
 /*************************** products **********************/
 
-
-// When Order Now button is clicked, open contact and 
-// set select option to the id of the product
 var buyBut=$('.buyNow');
-buyBut.click(function(but){
-    console.log("buy button clicked");
-    var prod=$(this).attr("id");   
-    openContactPage(prod);
-});
-
-
-
-
-function productClickHandler(){
-    buyBut=$('.buyNow');
-    buyBut.click(function(){
-        var prod=$(this).attr("id");  
-        console.log("buy button clicked in func"); 
+   
+    buyBut.click(function(but){
+        var prod=$(this).attr("id");   
         openContactPage(prod);
     });
-
-}
-
-
 
 
 function openContactPage (prod){
     $('main').load('contact.html main > *', null, function(){
-        $('html, body').animate({ scrollTop: 0 }, 0);
         selectProdOption(prod);
         var submitted=$('#submitContact');
-       
+        
+        submitted.click(function(e){
+            e.preventDefault();
+            var form = $("#formContact");
+            var data = form.serialize();
+            $.post( form.attr("action") , data , function(result){
+                $("#sendResult").html(result);
+            });
+            console.log("Submit Success from callback!");
+            return false;
+        });
 });
 }
 
@@ -10635,6 +10637,9 @@ function selectProdOption(prod){
 
 
 
+
+
+
 /**** Form *****/
 var submitted=$('#submitContact');
 submitted.click(function(){
@@ -10645,28 +10650,12 @@ submitted.click(function(){
 
 
 
-
-
-submitted.click(function(e){
-    e.preventDefault();
-    var form = $("#formContact");
-    var data = form.serialize();
-    $.post( form.attr("action") , data , function(result){
-        $("#sendResult").html(result);
-    });
-    console.log("Submit Success from callback!");
-    return false;
-});
-
-
-
 var submittednews=$('#submitNewsletter');
 submittednews.click(function(){
     // alert("Submit Success!");
     console.log("submit clicked");
     return true;
 });
-
 
 
 

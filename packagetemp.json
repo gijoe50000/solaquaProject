@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-scss": "node-sass  -include-path scss -o css",
-    "build-concat": "cat css/*.css > ./build/css/style.css",
-    "build-concat2": "cat js/*.js > ./build/js/js_all.js",
-    "build-uglify": "uglifyjs build/js/js_all.js --compress --mangle -o build/js/js.js ",
-    "build-server": "live-server build/",
+    "build-scss": "node-sass  -w scss -o build/css",
+    
     "build": " npm run build-concat && npm run build-scss  ",
     "build-bs": "browser-sync start --server",
     "build-scsscat":"npm run build-scss build-concat broswer-sync",

@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-scss": "node-sass  -w scss -o build/css",
-    
+    "build-scss": "node-sass  -include-path scss -o css",
+    "build-concat": "cat css/*.css > ./build/css/styleex.css",
+    "build-concat2": "cat js/*.js > ./build/js/js_all.js",
+    "build-uglify": "uglifyjs build/js/js_all.js --compress --mangle -o build/js/js.js ",
+    "build-uglifycss": "uglifycss build/css/styleex.css > build/css/style.css",
+    "build-minifycss": "css-minify build/css/styleex.css",
+    "build-server": "live-server build/",
     "build": " npm run build-concat && npm run build-scss  ",
     "build-bs": "browser-sync start --server",
-    "build-scsscat":"npm run build-scss build-concat broswer-sync",
+    "build-scsscat": "npm run build-scss build-concat broswer-sync",
     "start": " nodemon -e js,scss -x \"npm run build\" --ignore build/"
-
-   
   },
   "author": "joe",
   "license": "ISC",
@@ -22,9 +25,11 @@
     "browserify": "^16.2.2",
     "concat": "^1.0.3",
     "concatenate": "0.0.2",
+    "css-minify": "^1.0.1",
     "live-server": "^1.2.0",
     "node-sass": "^4.9.2",
     "nodemon": "^1.17.5",
-    "uglify-js": "^3.4.3"
+    "uglify-js": "^3.4.3",
+    "uglifycss": "0.0.29"
   }
 }

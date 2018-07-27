@@ -8,5 +8,5 @@ function initMap() {
         
     map = new google.maps.Map(document.getElementById('mapDiv'), { center: solaquaLoc, zoom: 13
     });
-    marker=new google.maps.Marker({position: solaquaLoc, icon: "../build/images/logo/marker.png", map: map});
+    marker=new google.maps.Marker({position: solaquaLoc, icon: "./images/logo/marker.png", map: map});
 }
