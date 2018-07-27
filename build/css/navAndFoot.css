@@ -121,13 +121,11 @@ footer {
       background: #E5E5E5; }
     #navListLarge li:hover {
       background: white;
-      border-radius: 8px;
-      box-shadow: inset #6E6E6E -1px -1px 1px; }
+      box-shadow: inset #E5E5E5 -1px -1px 1px; }
       #navListLarge li:hover a {
         color: #41E800; }
     #navListLarge li:active {
       background: white;
-      border-radius: 8px;
       box-shadow: inset #6E6E6E 1px 1px 1px; }
       #navListLarge li:active a {
         color: #6E6E6E; }
@@ -186,7 +184,7 @@ footer {
     width: auto; }
 
 #mapDiv {
-  margin: 0;
+  margin: 40px 0 0 0;
   width: 100%;
   height: 60vh; }
 

@@ -23,24 +23,25 @@ showMenu.click('slow', function(){
 
 
 //popup div for clicked image
+
 var popup= $('#popup'); 
 popup.hide();
 popup.click( 'slow', function(){   popup.hide()  });
-
-
+console.log("gal image clicked.............................");
 var $imageClicked=$('#gallery img');
-$imageClicked.click(galleryAddClickHandlers());
+$imageClicked.click(galleryAddClickHandlers(popup));
 
 
-var tempImg
+var tempImg;
 
-function galleryAddClickHandlers() {
+function galleryAddClickHandlers(popup) {
     $('.galImg').click(function(e){
-      
+      console.log("gal image clicked");
         popup.toggle();
         popup.empty();
-        popup.append( '<img src='    + 
-        this.getAttribute('src')     +     '>' );
+        tempImg=this.getAttribute('src');
+        popup.append( '<img src='    +tempImg    +     '>' );
+        console.log("gal image clicked and this: "+$(this).attr('src'));
       });
 }
  
@@ -86,7 +87,7 @@ function onLoadProducts(){
 
 function onLoadGallery() {
     console.log("onLoadGallery");
-    galleryAddClickHandlers();
+    galleryAddClickHandlers(popup);
 }
 
 
@@ -102,7 +103,7 @@ var $homeBut=$('.homeButton');
 var $galBut= $('.galButton');
     $galBut.click(function(){
         $('main').load('gallery.html #mainGallery > *', null, onLoadGallery);
-        console.log($galBut);
+        console.log('Gal page loaded');
 });
 
 
@@ -120,19 +121,6 @@ var $aboutBut=$('.aboutButton');
     $aboutBut.click(function(){
     $('main').load('aboutus.html main > *');
 });
-
-
-
-
-// var $newsBut=$('.newsButton');
-//     $newsBut.click(function(){
-//         console.log("news button clicked");
-//         $('main').load('news.html main > *', null, function(){
-//         console.log("news button clicked");
-//     });
-// });
-
-
 
 
 
@@ -167,22 +155,6 @@ $contactBut.click(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 /*************************** products **********************/
 
@@ -199,8 +171,15 @@ function openContactPage (prod){
         selectProdOption(prod);
         var submitted=$('#submitContact');
         
-        submitted.click(function(){
-            alert("Submit Success!");
+        submitted.click(function(e){
+            e.preventDefault();
+            var form = $("#formContact");
+            var data = form.serialize();
+            $.post( form.attr("action") , data , function(result){
+                $("#sendResult").html(result);
+            });
+            console.log("Submit Success from callback!");
+            return false;
         });
 });
 }
@@ -222,32 +201,21 @@ function selectProdOption(prod){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**** Form *****/
 var submitted=$('#submitContact');
 submitted.click(function(){
-    alert("Submit Success!");
-    console.log("submit clicked");
+    // alert("Submit Success!");
+    console.log("submit clicked from not cb");
+    return true;
 });
 
 
 
 var submittednews=$('#submitNewsletter');
 submittednews.click(function(){
-    alert("Submit Success!");
+    // alert("Submit Success!");
     console.log("submit clicked");
+    return true;
 });
 
 

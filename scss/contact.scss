@@ -89,15 +89,24 @@ $colourbla:#111;
         grid-row: 16;
         margin: 30px 0 30px 0;
         justify-self: center;
-    }
-    
-        #askQ{
-        grid-column: 3/10;
-        grid-row: 15;}
-
-        .boldTextContact{
-            font-weight: bold;
-            font-size:1.6rem;
         }
+    
+    #askQ{
+        grid-column: 1/13;
+        grid-row: 15;
+        }
+
+
+    #sendResult{
+        grid-column: 1/13;
+        grid-row: 17;
+        }
+
+
+
+    .boldTextContact{
+        font-weight: bold;
+        font-size:1.4rem;
+    }
 
 }

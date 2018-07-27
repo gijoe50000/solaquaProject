@@ -75,7 +75,6 @@ ul{
   
       a{
           color:$colourlg;  
-          // padding: 0 32vw;       
         }
   
       li{
@@ -205,14 +204,14 @@ footer{
 
             li:hover {
               background: white;
-              border-radius: 8px;
-              box-shadow: inset $colourdg -1px -1px 1px;
+              // border-radius: 8px;
+              box-shadow: inset $colourlg -1px -1px 1px;
               a { color: $colourgre;}
             }
 
             li:active {
               background: white;
-              border-radius: 8px;
+              // border-radius: 8px;
               box-shadow: inset $colourdg 1px 1px 1px;
                 a { color: $colourdg;}
               }
@@ -326,7 +325,7 @@ footer{
 
 
   #mapDiv{
-    margin:0;
+    margin:40px 0 0 0;
     width:100%;
     height:60vh;
 }
