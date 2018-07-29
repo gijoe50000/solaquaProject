@@ -20,6 +20,7 @@ $colourbla:#111;
     grid-row-gap: 15px;
     max-width: 400px;
     margin:0 auto;
+    padding: 0 1rem;
 
     h2{
         grid-column: 1/13;
@@ -32,6 +33,7 @@ $colourbla:#111;
         grid-column: 1/13;
         grid-row: 2;
         
+        margin: 0 1rem;
     }
 
 
@@ -52,43 +54,59 @@ $colourbla:#111;
 
 
     #inpname{ grid-column: 7/13;
-        grid-row: 4;}
+        grid-row: 4;
+    }
     #inpadd{ grid-column: 7/13;
-        grid-row: 5;}
+        grid-row: 5;
+    }
     #inpadd2{ grid-column: 7/13;
-        grid-row: 6;}
+        grid-row: 6;
+    }
     #inpadd3{ grid-column: 7/13;
-        grid-row: 7;}
+        grid-row: 7;
+    }
     #inptel{ grid-column: 7/12;
-        grid-row: 8;}
+        grid-row: 8;
+    }
     #inpmail{ grid-column: 7/12;
-        grid-row: 9;}
+        grid-row: 9;
+    }
     #inpcomment{ grid-column: 7/12;
-        grid-row: 10;}
+        grid-row: 10;
+    }
 
 
     .italctext{
         grid-column: 1/13;
-        grid-row: 12; }
+        grid-row: 12; 
+    }
 
-    #labinstallDate{ grid-column: 3/7;
-        grid-row: 13;}
+    #labinstallDate{ 
+        grid-column: 3/7;
+        grid-row: 13;
+    }
     
-        #installDate{ grid-column: 7/12;
-        grid-row: 13;}
+    #installDate{ 
+        grid-column: 7/12;
+        grid-row: 13;
+    }
 
 
-    #labproductList{ grid-column: 3/7;
-        grid-row: 14;}
+    #labproductList{ 
+        grid-column: 3/7;
+        grid-row: 14;
+    }
     
-        #productList{ grid-column: 7/12;
-        grid-row: 14;}
+    #productList{ 
+        grid-column: 7/12;
+        grid-row: 14;
+    }
     
     #submitContact{
         grid-column: 5/8;
         grid-row: 16;
         margin: 30px 0 30px 0;
-        justify-self: center;
+        // justify-self: center;
         }
     
     #askQ{

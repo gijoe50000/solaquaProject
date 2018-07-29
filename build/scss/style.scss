@@ -4,8 +4,11 @@
     text-decoration: none;  
 }
 
-$colourlg:#E5E5E5;
-$colourmg:#DFDCDC;
+// $colourlg:#E5E5E5;
+// $colourmg:#DFDCDC;
+$colourlg:#e2e2e2;
+$colourmg:#9494a2;
+
 $colourdg:#6E6E6E;
 $colourgre:#41E800;
 $colourblu:#0040FF;
@@ -21,39 +24,48 @@ $colourbla:#111;
 #cookieBanner{
     font-family:Montserrat; 
     display:flex;
+    flex-direction: row;
     position:fixed;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     top:0;
+    // max-width: 100%;
     width:100vw;
     background: $colourblu;
     color: $colourlg;
     z-index:10;
-    padding: 0 20px 0 20px;
+    padding: 0 2% 0 2%;
+    
+    .buttonwrapper{
+        display:flex;
+        flex-direction: row;
+    }
+
 }
 
 
-#cookieHeader{ font-family:serif; }
-
-
 #cookieHeader{
-    padding:20px;
+    width:100vw;
     font-size: 2.6rem;
+    padding:10px;
 }
 
 .padding{padding:20px;}
 
 .cookiePara{
     padding:20px;
-    margin:0 10vw;
-    font-size: 1.4rem;
+    margin:0 1vw;
+    font-size: 1.2rem;
     line-height: 1.3;
     color: $colourmg;
 }
 
 .cookieButton{
     background: $colourgre;
-    margin: 5px 20px;
-    padding: 2px 30px;
+    margin: 10px;
+    padding: 2px 5px;
+    min-width:120px;
     color: $colourblu;
 }
 
@@ -134,7 +146,7 @@ h4 {
 button {
     display: block;
     margin: 20px auto;
-    width: 150px;
+    min-width: 150px;
     height: 60px;
     border-radius: 5px;
     font-size: 1.4rem;
@@ -240,8 +252,9 @@ button {
 }
 
 .formBut{
-    padding:6px 15px;
+    padding:6px .5rem;
     font-size: 1.2rem;
+    min-width: 120px;
 }
 /************ Products Page ***************/
 
@@ -314,6 +327,17 @@ button {
     /************** Gallery Media Query ****************************/
     @media(min-width: "800px") { //large screens
            
+
+        .cookieButton{}
+
+
+
+
+
+
+
+
+
         .galImg2{
             display: inline-block;
         }
@@ -342,6 +366,18 @@ button {
 
     @media(min-width: "1200px") { //large screens
    
+
+
+        
+
+#cookieHeader{
+    width:380px;
+    padding:20px;
+    font-size: 2.6rem;
+}
+
+
+
         .galImg3, .galImg4 {
             display: inline-block;
         }
