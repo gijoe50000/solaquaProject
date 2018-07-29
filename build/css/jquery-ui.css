@@ -885,10 +885,10 @@ body .ui-tooltip {
 ----------------------------------*/
 .ui-widget {
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 1em;
+	font-size: 1.2rem;
 }
 .ui-widget .ui-widget {
-	font-size: 1em;
+	font-size: 1.2rem;
 }
 .ui-widget input,
 .ui-widget select,

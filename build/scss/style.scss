@@ -100,7 +100,7 @@ body {
 }
 
 #free {
-    // font-family:Merienda;
+    font-family:Merienda;
     color: $colourgre;
 }
 
@@ -193,7 +193,6 @@ button {
 
 
 
-
 #gallery {
    box-shadow: inset $colourdg 8px 8px 100px 3px ;
     display: grid; 
@@ -202,6 +201,7 @@ button {
     grid-gap: 30px;
     padding:50px;
     margin: 20px auto;
+    margin-bottom: 200px;
     background:$colourlg;
     img{ cursor: pointer;}
    
@@ -328,7 +328,7 @@ button {
     @media(min-width: "800px") { //large screens
            
 
-        .cookieButton{}
+     
 
 
 

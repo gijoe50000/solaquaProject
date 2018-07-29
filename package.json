@@ -4,17 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-scss": "node-sass  -include-path scss -o ./build/css",
-    "build-concat": "cat css/*.css > css/styleex.css",
+    "s": "node-sass  -w build/scss -o build/css",
+    "build-concat": "cat build/css/*.css > build/css/hold/style.css",
+    "build-concat2": "cat build/js/*.js > build/js/hold/js.js",
+    "build-uglify": "uglifyjs build/js/hold/js.js --compress --mangle -o build/js/dist/js.js ",
+    "build-uglifycss": "uglifycss build/css/hold/style.css > build/css/dist/style.css",
     
-    "build-concat2": "cat js/*.js > js/js_all.js",
-    "build-uglify": "uglifyjs js/js_all.js --compress --mangle -o ./build/js/js.js ",
-    
-    "build-uglifycss": "uglifycss css/styleex.css > ./build/css/style.css",
-    "build-minifycss": "css-minify ./build/css/styleex.css",
     "build-server": "live-server build/",
+    "build-dist": " npm run build-concat && npm run build-concat2 && npm run build-uglify  && npm run build-uglifycss",
     
-    "build": " npm run build-concat && npm run build-concat && npm run build-scss  ",
     "build-bs": "browser-sync start --server",
     "build-scsscat": "npm run build-scss build-concat broswer-sync",
     "start": " nodemon -e js,scss -x \"npm run build\" --ignore build/"

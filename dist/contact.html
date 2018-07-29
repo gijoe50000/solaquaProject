@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/_reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navAndFoot.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <title>Solaqua</title>
+</head > -->
+
+   
+    <main id="contactMain">
+  
+    
+    <!-- Form -->
+            <form name="contact" action="./cgiBin" method="POST" id="formContact">
+                <h2 >Contact Us</h2>
+                
+                <p id="para1">If you want to order a product enter the product code, if you were automatically redirected here from the product
+                    page then this will be filled out already. For installations, enter a date and time that suits you, and we will
+                    contact you shortly to confirm.</p>
+        
+        
+                
+                
+                <label id= "labOrder" for="checkbox">Do you want to order a product?</label>
+                <input id= "inpCheck" type="checkbox" name="checkbox">
+                
+                
+                <label id= "labname" for="name">Name:</label>
+                <input id= "inpname" type="text" name="name">
+    
+                <label id= "labadd" for="address">Address:
+                    <br>(optional)</label>
+                <input id= "inpadd" type="text" name="address">
+                 <input id= "inpadd2" type="text" name="address2">
+    
+    
+                <input id= "inpadd3" type="text" name="address3">
+    
+    
+                <label id= "labtel" for="tel">Tel:</label>
+                <input id= "inptel" type="tel" name="tel">
+    
+                <label id= "labmail" for="email">Email:</label>
+                <input id= "inpmail" type="email" name="email">
+    
+                <label id= "labcomment"for="comment">Comment:</label>
+                <textarea id= "inpcomment"  name="comment" id="comment" cols="30" rows="10"></textarea>
+    
+               
+
+                <p class="italctext">If you are ordering a product or installation please select the product from the dropdown list. Otherwise select
+                    "none".
+                </p>
+    
+                <label id="labinstallDate"for="installDate">install Date:</label>
+                <input type="date" name="installDate" id="installDate">
+                
+                
+                <label id= "labproductList"for="productList">product List:</label>
+                <select name="productList" id="productList">
+                    <option value="none">None</option>
+                    <option value="readymade">Ready Made Panels</option>
+                    <option value="custommade" selected>Custom Size Panels</option>
+                    <option value="charging">Car Charging Station</option>
+                    <option value="portable">Portable Charging Equipment</option>
+                </select>
+                
+                
+                <input type="submit" value="Send" name="submit" id="submitContact" class= " formBut hoverBut">
+                <!-- <a href="#home"><img src="images/ico/bttIcon.svg" alt="" width="40" id="backToTop"></a> -->
+                <div class="boldTextContact padding " id="sendResult"></div>
+                <p id= "askQ" class=" boldTextContact">If you have any questions, 
+                    please don’t hesitate to ask. We are happy to hear from you!</p>
+    
+            </form>
+    <!-- End of Form -->
+    
+    
+           
+        </main>
+
+
+<!-- 
+        <script    src="js/jquery-3.3.1.js" ></script>
+        <script src="js/js.js"></script>
+    
+        </body>
+    
+    </html> -->
