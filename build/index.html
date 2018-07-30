@@ -16,15 +16,13 @@
     <title>Solaqua</title>
 </head>
 <body>
-
     <div id="cookieBanner">
         <h3 id="cookieHeader">Cookie Notice</h1>
-        <p class="cookiePara ">Do you want accept cookies?
-        </p>
+        <p class="cookiePara ">Do you want to accept cookies?</p>
         <div class="buttonwrapper">
-        <button id="accept" class="cookieButton hoverBut">Accept</button>
-        <button id="decline" class="cookieButton hoverBut">Decline</button>
-    </div>
+            <button id="accept" class="cookieButton hoverBut">Accept</button>
+            <button id="decline" class="cookieButton hoverBut">Decline</button>
+        </div>
     </div>
 
     <nav id="home">
@@ -49,13 +47,11 @@
     </nav>
 
     <a href="#home" id="backToTop">▲ </a>
-
     <main id="mainHome">
         <img src="images/large/mainlarge.jpg" alt="" class="fullImg">
         <h1 id="mainHeadingGreen"> 70% of your hot water for
             <span id="free">free!</span>
         </h1>
-
         <article>
             <h3>On average SOLAQUA can provide up to 70% of your hot water for free! </h3>
             <p class="para">Many people believe that Solar Panels in Ireland only work during the summer, however this type of free energy is
@@ -65,17 +61,13 @@
             <div id="bkimg2"></div>
             <h3>Solar Charging Station for a full charge every morning. </h3>
         </article>
-
-
         <article>
             <p class="para">
                 Solar panels and EV Car chargers in one system includes solar panels mounted on your roof or on a car port, a suitable EV
                 car charger and an optional battery pack. The battery pack is optional for the moment due to cost but will soon
                 be a very beneficial part of the system, for now we can use your EV car as the battery.
-
             </p>
             <img src="images/large/charging_station_med.jpg" alt="graphic of car charging station" id="solCar">
-
             <p class="para">When the sun shines the solar panels start to generate electricity, this goes firstly to your house or building's
                 electricity supply and feeds anything that is using electricity at that time, the washing machine at home for
                 example or computers or machinery if you are in a work setting. By including EV Car Chargers in your system you
@@ -88,10 +80,11 @@
         </article>
 
 
+
+
         <!-- ----------Gallery---------- -->
-        <div id="popup" visibility='hidden'></div>
+        <div id="popup"></div>
             <h2 id="galleryHeader" contained90>GALLERY</h2>
-        
             <section id="galleryHome" >
                 <img src="images/large/mainlarge.jpg" alt="" class="galImg ">
                 <img src="images/small/8.jpg" alt="" class="galImg" >
@@ -102,10 +95,11 @@
             </section>
 
 
+
+
         <!--Products-->
         <h2 id="productHeader">PRODUCTS</h2>
             <section id="contProducts">
-
                 <article class="product myBorder " id="charging">
                     <h3>Portable chargers &amp; panels</h3>
                     <img src="images/small/13.jpg" alt="" class=" prodImg">
@@ -115,12 +109,8 @@
                         DC output (18V/2A) for charging a laptop or other 18V powered devices. Fortunately, all that extra juice
                         doesn’t mean an unwieldy size.It maintains a slim and foldable profile that’s easy to carry around. It can
                         go in or on a backpack with the included carabiner that hooks directly to a bag.</p>
-                
                         <button class="buyNow hoverBut" id="charging" >Order Now</button>
                 </article>
-
-                    
-
                 <article class="product myBorder" id="portable">
                     <h3>Car charging station</h3>
                     <img src="images/large/charging_station_med.jpg" alt="" class="  prodImg">
@@ -130,7 +120,6 @@
                         most economic battery systems. </p>
                     <button class="buyNow hoverBut" id="portable">Order Now</button>
                 </article>
-
                 <article class="product myBorder" id="readymade">
                     <h3>Ready made panels</h3>
                     <img src="images/small/8.jpg" alt="" class=" prodImg">
@@ -139,7 +128,6 @@
                         requirements under Part L of the building code. Easy to fit with no pipework or pumps.</p>
                     <button class="buyNow hoverBut" id="readymade">Order Now</button>
                 </article>
-
                 <article class="product myBorder" id="custommade">
                     <h3>Custom size panels</h3>
                     <img src="images/small/7.jpg" alt="" class="  prodImg">
@@ -150,10 +138,11 @@
             </section>
             <!-- end of product section -->
 
+
             <!-- RSS Feed -->
             <section id="newsFeed">
                 <h2 id="news">NEWS</h2>
-                <script src="js/RSSScript.js"></script>
+                <!-- <script src="js/RSSScript.js"></script> -->
                 <script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script>
             </section>
 
@@ -167,7 +156,6 @@
                     on which technologies and products are best suited to your particular home or business. </p>
             </section>
     </main>
-
 
 
     <footer>  
@@ -191,8 +179,7 @@
                     <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
                 </div>
             </section>
-
-            <form  name="newsLetter"action="/cgiBin" method="GET" id="newsletter" class="  myBorder padding_foot">
+            <form  name="newsLetter" action="./cgiBin" method="POST" id="newsletter" class="  myBorder padding_foot">
                 <h4 id="nlhead">SIGN UP FOR NEWSLETTER</h4>
                 <div id="formInput">
                     <label id="labeln" for="name">Name:</label>
@@ -202,16 +189,14 @@
                 </div>
                 <input type="submit" value="Subscribe" name="submit" id="submitNewsletter" class=" formBut hoverBut">
             </form>
-
             <ul id="navFooter" class="padding_foot">
-                    <li class="homeLink">  <a href="index.html">Home</a></li>
-                    <li class="galLink">    <a href="#Gallery">Gallery</a> </li>
-                    <li class="prodLink">   <a href="#Products">Products</a></li>        
-                    <li class="newsLink">   <a href="#News">News</a>  </li>
-                    <li class="aboutLink">  <a href="#About">About Us</a></li>
-                    <li class="contactLink"><a href="#Contact">Contact</a>  </li>
+                <li class="homeLink">  <a href="index.html">Home</a></li>
+                <li class="galLink">    <a href="#Gallery">Gallery</a> </li>
+                <li class="prodLink">   <a href="#Products">Products</a></li>        
+                <li class="newsLink">   <a href="#News">News</a>  </li>
+                <li class="aboutLink">  <a href="#About">About Us</a></li>
+                <li class="contactLink"><a href="#Contact">Contact</a>  </li>
             </ul>
-
             <ul id="policyFooter" class="padding_foot">
                 <li>  <a href="tandc.html">Terms and Conditions </a>  </li>
                 <li>  <a href="Cookie_Policy.html">Cookie Policy</a> </li>
@@ -223,9 +208,6 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkMjmHf-RO698y7xxC4Aw6SlWusOOFm8&callback=initMap"
         async defer></script>
-   
-
-   
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/kontent.js"></script>

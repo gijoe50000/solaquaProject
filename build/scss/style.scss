@@ -7,7 +7,7 @@
 // $colourlg:#E5E5E5;
 // $colourmg:#DFDCDC;
 $colourlg:#e2e2e2;
-$colourmg:#9494a2;
+$colourmg:#bbbbbb;
 
 $colourdg:#6E6E6E;
 $colourgre:#41E800;
@@ -20,6 +20,15 @@ $colourbla:#111;
 @import url('https://fonts.googleapis.com/css?family=Merienda');
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+body {
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: $colourbla;
+    text-align: center;
+    width: 100%;
+}
 
 #cookieBanner{
     font-family:Montserrat; 
@@ -41,7 +50,6 @@ $colourbla:#111;
         display:flex;
         flex-direction: row;
     }
-
 }
 
 
@@ -73,13 +81,7 @@ $colourbla:#111;
     display: none;
 }
 
-body {
-    font-size: 10px;
-    font-family: 'Open Sans', sans-serif;
-    color: $colourbla;
-    text-align: center;
-    width: 100%;
-}
+
 
 #mainhome {
     display: grid;
@@ -105,7 +107,8 @@ body {
 }
 
 h1 {
-    // font-family: Arvo;
+    font-family: Arvo;
+
     width: 100%;
     position: absolute;
     top: 10rem;

@@ -7,8 +7,8 @@
     "s": "node-sass  -w build/scss -o build/css",
     "build-concat": "cat build/css/*.css > build/css/hold/style.css",
     "build-concat2": "cat build/js/*.js > build/js/hold/js.js",
-    "build-uglify": "uglifyjs build/js/hold/js.js --compress --mangle -o build/js/dist/js.js ",
-    "build-uglifycss": "uglifycss build/css/hold/style.css > build/css/dist/style.css",
+    "build-uglify": "uglifyjs build/js/hold/js.js --compress --mangle -o dist/js/js.js ",
+    "build-uglifycss": "uglifycss build/css/hold/style.css > dist/css/style.css",
     
     "build-server": "live-server build/",
     "build-dist": " npm run build-concat && npm run build-concat2 && npm run build-uglify  && npm run build-uglifycss",

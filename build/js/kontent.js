@@ -1,16 +1,30 @@
 $(function() {
 
+var $navList=$('#navList');
+var $showMenu=$('#hmbMenu');
+var $galleryBut= $('#galleryButton');
+var $homeLink=$('.homeLink');
+var $galLink= $('.galLink');
+var $prodLink=$('.prodLink');
+var $aboutLink=$('.aboutLink');
+var $newsLink=$('.newsLink');
+var $contactLink=$('.contactLink');
+var $buyBut=$('.buyNow');
+var $submitted=$('#submitContact');
+var $submittedNews=$('#submitNewsletter');
+var $popup= $('#popup'); 
+var $imageClicked=$('#gallery img');
+var $tempImg;
+$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 
-var navList=$('#navList');
-var showMenu=$('#hmbMenu');
-navList.hide();
+$navList.hide();
 
-navList.click('slow', function(){
-    navList.hide();
+$navList.click('slow', function(){
+    $navList.hide();
 });
 
-showMenu.click('slow', function(){
+$showMenu.click('slow', function(){
     $('#navList').toggle();
 });
 
@@ -18,33 +32,18 @@ showMenu.click('slow', function(){
 
 
 
-/****** Gallery images popup ******/ 
+/****** Gallery images $popup ******/ 
 
-//popup div for clicked gallery image
-var popup= $('#popup'); 
-popup.hide();
-popup.click( 'slow', function(){   popup.hide()  });
-console.log("gal image clicked.............................");
-var $imageClicked=$('#gallery img');
-$imageClicked.click(galleryAddClickHandlers(popup));
+//$popup div for clicked gallery image
+$popup.hide();
+$popup.click( 'slow', function(){$popup.hide()});
+$imageClicked.click(galleryAddClickHandlers());
 
 
-var tempImg;
-
-function galleryAddClickHandlers(popup) {
-    $('.galImg').click(function(e){
-        popup.toggle();
-        popup.empty();
-        tempImg=this.getAttribute('src');
-        popup.append( '<img src='    +tempImg    +     '>' );
-        console.log("gal image clicked and this: "+$(this).attr('src'));
-      });
-}
- 
-/* End of Gallery images popup*/ 
+/* End of Gallery images $popup*/ 
 
 
-
+// $popup.style.border="3px solid black";
 
 
 
@@ -68,56 +67,69 @@ function galleryAddClickHandlers(popup) {
 /*******************AJAX Load pages into main********************/
 
 
+//Load home main content
 
-// Load More.. Button in gallery in index.html
-var $galleryBut= $('#galleryButton');
-    $galleryBut.click(function(){
-        $('#galleryHome').load('gallery.html #gallery > *',null , onLoadGallery);
-});
-
-
-
-function onLoadProducts(){
-    console.log("onLoadProducts");
-    $('#contProductTabs').tabs();
-     $('html, body').animate({ scrollTop: 0 }, 'slow');
-    productClickHandler();
-   
-}
-
-function onLoadGallery() {
-    console.log("onLoadGallery");
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-    galleryAddClickHandlers(popup);
-    
-}
-
-
-var $homeLink=$('.homeLink');
 $homeLink.click(function(){
 $   ('main').load('index.html main > *');
-$('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
+
+// Load More images into gallery in index.html via See More button.
+$galleryBut.click(function(){
+    $('#galleryHome').load('gallery.html #gallery > *',null , onLoadGallery);
+});
+
+
 // load full gallery page using AJAX
-var $galLink= $('.galLink');
 $galLink.click(function(){
     $('main').load('gallery.html #mainGallery > *', null, onLoadGallery);
 });
 
+function onLoadGallery() {
+ $('html, body').animate({ scrollTop: 0 }, 'slow');
+    galleryAddClickHandlers();
+}
 
-var $prodLink=$('.prodLink');
+
+function galleryAddClickHandlers() {
+    $('.galImg').click(function(e){
+        $imageClicked=$('#gallery img');
+        $popup= $('#popup'); 
+        $popup.toggle();
+        $popup.empty();
+        $imageClicked=$('#gallery img');
+        $tempImg=$(this).attr('src');
+        $popup.append( '<img src=' +$tempImg +'>' );
+        $popup.css("border", "3px solid black");
+        $popup.click( 'slow', function(){$popup.hide()});
+    });
+}
+ 
+
+
+
+
+
+
+
+
+
 $prodLink.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
    });
 
-var $aboutLink=$('.aboutLink');
+function onLoadProducts(){
+    $('#contProductTabs').tabs();
+     $('html, body').animate({ scrollTop: 0 }, 'slow');
+    productClickHandler();
+}
+
 $aboutLink.click(function(){
     $('main').load('aboutus.html main > *');
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
-var $newsLink=$('.newsLink');
+
 $newsLink.click(function(){
     $('main').load('news.html main > *', null, loadNewsScript);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -128,7 +140,7 @@ function loadNewsScript(){
   $.getScript("//feed.surfing-waves.com/js/rss-feed.js",null);
 }
 
-var $contactLink=$('.contactLink');
+
 $contactLink.click(function(){
       openContactPage();
       $('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -142,9 +154,9 @@ $contactLink.click(function(){
     
 /*************************** products **********************/
 
-var buyBut=$('.buyNow');
+
     
-buyBut.click(function(but){
+$buyBut.click(function(but){
         var prod=$(this).attr("id");   
         openContactPage(prod);
     });
@@ -152,7 +164,7 @@ buyBut.click(function(but){
 
 //whewn buy button is clicked, pass the product to buy (contact) page
 function productClickHandler(){
-        buyBut.click(function(){
+        $buyBut.click(function(){
         var prod=$(this).attr("id");   
         openContactPage(prod);
     });
@@ -165,7 +177,7 @@ function productClickHandler(){
 function openContactPage (prod){
     $('main').load('contact.html main > *', null, function(){
         selectProdOption(prod);
-        var submitted=$('#submitContact');
+        var $submitted=$('#submitContact');
 });
 }
 
@@ -181,14 +193,14 @@ function selectProdOption(prod){
 
 
 /**** Form *****/
-var submitted=$('#submitContact');
-submitted.click(function(){
+
+$submitted.click(function(){
     console.log("submit clicked from not cb");
     return true;
 });
 
 
-submitted.click(function(e){
+$submitted.click(function(e){
     e.preventDefault();
     var form = $("#formContact");
     var data = form.serialize();
@@ -201,14 +213,12 @@ submitted.click(function(e){
 
 
 
-
-var submittedNews=$('#submitNewsletter');
-submittedNews.click(function(){
+$submittedNews.click(function(){
     console.log("submit clicked");
     return true;
 });
 
-submittedNews.click(function(e){
+$submittedNews.click(function(e){
     e.preventDefault();
     var news = $("#newsletter");
     var data = news.serialize();
