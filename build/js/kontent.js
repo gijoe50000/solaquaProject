@@ -43,15 +43,6 @@ $imageClicked.click(galleryAddClickHandlers());
 /* End of Gallery images $popup*/ 
 
 
-// $popup.style.border="3px solid black";
-
-
-
-
-
-
-
-
 
 /***************contact form************************/
 
@@ -99,23 +90,19 @@ function galleryAddClickHandlers() {
         $popup.empty();
         $imageClicked=$('#gallery img');
         $tempImg=$(this).attr('src');
-        $popup.append( '<img src=' +$tempImg +'>' );
-        $popup.css("border", "3px solid black");
+        // $popup.css('max-width','100%');
+        $popup.append( '<img src=' +$tempImg +'>');
+        $('#popup img').css('max-width','100%').css("border", "3px solid black").css("margin", "0 auto");
+        // $tempImg.css("border", "3px solid black");
         $popup.click( 'slow', function(){$popup.hide()});
+    
     });
 }
  
 
-
-
-
-
-
-
-
-
 $prodLink.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
    });
 
 function onLoadProducts(){
@@ -130,15 +117,37 @@ $aboutLink.click(function(){
 });
 
 
+
 $newsLink.click(function(){
-    $('main').load('news.html main > *', null, loadNewsScript);
+    $('main').load('news.html #mainNews > *', null, onLoadNewspage);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
-function loadNewsScript(){
-  $.getScript("js/RSSScript.js",null);
-  $.getScript("//feed.surfing-waves.com/js/rss-feed.js",null);
-}
+
+
+
+function onLoadNewspage (){
+    
+    // var addscript1=$.getScript("js/RSSScript.js",null);
+    // var addscript2=$.getScript("js/rss-feed.js",null);
+    // $('main').load('news.html #mainNews > *',null);
+        // $('main').load('news.html #mainNews > *');
+    // $('#newsDiv').get(addscript1);
+    // $('#newsDiv').load(addscript2);
+    // $('#newsDiv').load(addscript1).load(addscript2);
+    // $('#newsDiv').load(addscript1).load(addscript2);
+
+//   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
+    // $('#newsDiv').load(addscript1).load(addscript2);
+
+
+  }
+
+
+
+
+
+
 
 
 $contactLink.click(function(){
@@ -171,9 +180,6 @@ function productClickHandler(){
 
 }
 
-
-
-
 function openContactPage (prod){
     $('main').load('contact.html main > *', null, function(){
         selectProdOption(prod);
@@ -181,15 +187,11 @@ function openContactPage (prod){
 });
 }
 
-
-
 function selectProdOption(prod){
     prodList=$('#productList');
     options=$('#productList > option');
     prodList.val(prod);
 }
-
-
 
 
 /**** Form *****/
@@ -211,8 +213,7 @@ $submitted.click(function(e){
     return false;
 });
 
-
-
+//Newsletter
 $submittedNews.click(function(){
     console.log("submit clicked");
     return true;
