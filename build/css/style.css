@@ -94,8 +94,9 @@ h2 {
   font-family: Raleway;
   font-size: 3rem;
   font-weight: 900;
-  padding: 100px 0 30px 0;
-  text-shadow: 1px 1px 4px #bbbbbb; }
+  /* padding: 100px 0 30px 0; */
+  text-shadow: 1px 1px 4px #bbbbbb;
+  }
 
 h3 {
   font-family: Montserrat;

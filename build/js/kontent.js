@@ -9,14 +9,16 @@ var $prodLink=$('.prodLink');
 var $aboutLink=$('.aboutLink');
 var $newsLink=$('.newsLink');
 var $contactLink=$('.contactLink');
+var $prod;
+
 var $buyBut=$('.buyNow');
+
 var $submitted=$('#submitContact');
 var $submittedNews=$('#submitNewsletter');
 var $popup= $('#popup'); 
 var $imageClicked=$('#gallery img');
 var $tempImg;
 $('html, body').animate({ scrollTop: 0 }, 'slow');
-var result="Sent";
 
 $navList.hide();
 
@@ -59,7 +61,6 @@ $imageClicked.click(galleryAddClickHandlers());
 
 
 //Load home main content
-
 $homeLink.click(function(){
 $   ('main').load('index.html main > *');
 });
@@ -100,16 +101,69 @@ function galleryAddClickHandlers() {
 }
  
 
+
+/*****************Products**********************/
+//load products page into index.html
 $prodLink.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
+    console.log("prodlink");
    });
 
+
+   //load jqueryui tabs and set up click handler
 function onLoadProducts(){
     $('#contProductTabs').tabs();
      $('html, body').animate({ scrollTop: 0 }, 'slow');
-    productClickHandler();
+     console.log("load prod page");
+     productClickHandler();
 }
+
+
+
+///automatically go to contact page when the order button is clicked on a product.
+function productClickHandler(){
+    console.log("start of function before buy clicked "+ $buyBut.attr('class'));        
+    $buyBut.click(function(){$prod=$(this).attr("id");
+    openContactPage($prod);
+    console.log("outside func buy= "+ this);       
+    });
+  
+}  
+
+
+//click order button and go to contact page
+$buyBut.click(function(){
+     $prod=$(this).attr("id");   
+    //  console.log("outside func buy= "+ this);
+     openContactPage($prod);
+});
+
+
+
+
+
+// And pass in the product name to the select list
+function openContactPage ($prod){
+    $('main').load('contact.html main > *', null, function(){
+        selectProdOption($prod);
+        });
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+
+
+
+    // just for the select box on contact page
+function selectProdOption($prod){
+    prodList=$('#productList');
+    options=$('#productList > option');
+    prodList.val($prod);
+    }
+
+
+
+/**********other AJAX links***************/
+
 
 $aboutLink.click(function(){
     $('main').load('aboutus.html main > *');
@@ -150,36 +204,9 @@ $contactLink.click(function(){
 
 
     
-/*************************** products **********************/
-
-    
-$buyBut.click(function(but){
-        var prod=$(this).attr("id");   
-        openContactPage(prod);
-    });
 
 
-//whewn buy button is clicked, pass the product to buy (contact) page
-function productClickHandler(){
-        $buyBut.click(function(){
-        var prod=$(this).attr("id");   
-        openContactPage(prod);
-    });
 
-}
-
-function openContactPage (prod){
-    $('main').load('contact.html main > *', null, function(){
-        selectProdOption(prod);
-        var $submitted=$('#submitContact');
-});
-}
-
-function selectProdOption(prod){
-    prodList=$('#productList');
-    options=$('#productList > option');
-    prodList.val(prod);
-}
 
 
 /**** Form *****/
