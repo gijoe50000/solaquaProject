@@ -33,7 +33,6 @@ nav{
 }
 
 
-
 #hmbMenu:hover{
   background-color: #fff;
   border:2px solid #ccc;
@@ -102,15 +101,6 @@ ul{
 /**************End Nav**********************/
 
 
-
-
-
-
-
-
-
-
-
 /**************Footer***********************/
 
 //Small default Footer grid
@@ -139,10 +129,63 @@ footer{
         max-width: 300px;
         box-shadow: inset  $colourdg -3px -3px 200px 4px;
         border:1px $colourdg solid;
+        #nlhead{
+        font-size: 8vw;
+        }
         input{
-            margin:5px;
+              margin:5px;
+              align-self: center;  
             }
-      } //End Newsletter
+
+          /*Form for newsletter*/
+          #formInput{
+            padding:30px;
+            display:grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 3fr; 
+            grid-row-gap: 10px;
+            font-size:1.2rem;
+
+              #submitNewsletter{ cursor: pointer;}
+              
+
+            @mixin labP{  padding-right:8px;}
+
+                  #labeln{
+                      grid-row: 1;
+                      grid-column: 1;
+                      @include labP;
+                    }
+
+                  #inputn{
+                      grid-row: 1;
+                      grid-column: 2;
+                      width:90%;
+                    }
+                  #labele{
+                      width:20px;
+                      grid-row: 2;
+                      grid-column: 1;
+                    }
+                
+                    #inpute{
+                      grid-row: 2;
+                      grid-column: 2;
+                      width:90%;
+                    }
+            } //end form input
+
+      
+      @media(min-width:"400px"){
+        #nlhead{
+          font-size: 1.8rem;
+          }
+      }
+      
+      
+      
+      
+          } //End Newsletter
 
 
       #footAddress{ 
@@ -164,13 +207,22 @@ footer{
                 a{
                   color: $colourdg;
                   text-align: center;}
-
               }
         }
 
   
 
   
+ 
+
+
+
+#mapDiv{
+margin:40px 0 0 0;
+width:100%;
+height:60vh;
+}
+
   
    
 } //end footer grid
@@ -245,7 +297,7 @@ footer{
 
   #newsletter{
       background: $colourmg;
-      width: 300px;
+      max-width: 300px;
       box-shadow: inset  $colourdg -3px -3px 200px 4px;
     
       input{
@@ -273,7 +325,7 @@ footer{
     
 
     #logos{
-      img{ padding:20px, 10px; }
+      img{ margin:20px 10px; }
     }
     
      
@@ -286,50 +338,6 @@ footer{
 
 
   
- 
-
- /*Form for newsletter*/
-        #formInput{
-            padding:30px;
-            display:grid;
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: 1fr 3fr; 
-            grid-row-gap: 10px;
-            font-size:1.2rem;
-
-                  #labeln{
-                      grid-row: 1;
-                      grid-column: 1;
-                      align-self: end;
-                    }
-                  #inputn{
-                      grid-row: 1;
-                      grid-column: 2;
-                      align-self: end;
-                      width:auto;
-                    }
-                  #labele{
-                      width:20px;
-                      grid-row: 2;
-                      grid-column: 1;
-                    }
-                
-                    #inpute{
-                      grid-row: 2;
-                      grid-column: 2;
-                      width:auto;
-                    }
-            } //end form input
-
-
-
-
-  #mapDiv{
-    margin:40px 0 0 0;
-    width:100%;
-    height:60vh;
-}
-
 
 
 

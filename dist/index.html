@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="/build/images/logo/logoAndOutline.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/_reset.css">   -->
     <link rel="stylesheet" href="css/style.css"> 
+    <!-- <link rel="stylesheet" href="css/jquery-ui.css"> 
+    <link rel="stylesheet" href="css/jquery-ui.structure.css"> 
+    <link rel="stylesheet" href="css/navAndFoot.css">
+    <link rel="stylesheet" href="css/contact.css">   -->
+
+
     <title>Solaqua</title>
 </head>
 <body>
@@ -76,7 +83,7 @@
 
 
         <!-- ----------Gallery---------- -->
-        <div id="popup" ></div>
+        <div id="popup"></div>
             <h2 id="galleryHeader" contained90>GALLERY</h2>
             <section id="galleryHome" >
                 <img src="images/large/mainlarge.jpg" alt="" class="galImg ">
@@ -135,8 +142,8 @@
             <!-- RSS Feed -->
             <section id="newsFeed">
                 <h2 id="news">NEWS</h2>
-                <!-- <script src="js/RSSScript.js"></script> -->
-                <script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script>
+                <script src="js/RSSScript.js"></script>
+                <script type="text/javascript" src="js/rss-feed.js"></script>
             </section>
 
 
@@ -172,7 +179,7 @@
                     <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
                 </div>
             </section>
-            <form  name="newsLetter"action="/cgiBin" method="GET" id="newsletter" class="  myBorder padding_foot">
+            <form  name="newsLetter" action="./cgiBin" method="POST" id="newsletter" class="  myBorder padding_foot">
                 <h4 id="nlhead">SIGN UP FOR NEWSLETTER</h4>
                 <div id="formInput">
                     <label id="labeln" for="name">Name:</label>
@@ -201,7 +208,13 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkMjmHf-RO698y7xxC4Aw6SlWusOOFm8&callback=initMap"
         async defer></script>
-   
+    <!-- <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/kontent.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/RSSScript.js"></script>  
+    <script src="js/cookieBanner.js"></script> -->
+  
     <script src="js/js.js"></script>
 
 

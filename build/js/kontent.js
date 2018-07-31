@@ -16,7 +16,7 @@ var $popup= $('#popup');
 var $imageClicked=$('#gallery img');
 var $tempImg;
 $('html, body').animate({ scrollTop: 0 }, 'slow');
-
+var result="Sent";
 
 $navList.hide();
 
@@ -136,18 +136,11 @@ function onLoadNewspage (){
     // $('#newsDiv').load(addscript2);
     // $('#newsDiv').load(addscript1).load(addscript2);
     // $('#newsDiv').load(addscript1).load(addscript2);
-
-//   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
+    //   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
     // $('#newsDiv').load(addscript1).load(addscript2);
 
 
   }
-
-
-
-
-
-
 
 
 $contactLink.click(function(){
@@ -156,13 +149,8 @@ $contactLink.click(function(){
     });
 
 
-
-
-
-
     
 /*************************** products **********************/
-
 
     
 $buyBut.click(function(but){
@@ -197,36 +185,37 @@ function selectProdOption(prod){
 /**** Form *****/
 
 $submitted.click(function(){
-    console.log("submit clicked from not cb");
+    console.log("submit clicked tru");
     return true;
 });
 
 
 $submitted.click(function(e){
+    console.log("submit clicked fal");
     e.preventDefault();
     var form = $("#formContact");
     var data = form.serialize();
     $.post( form.attr("action") , data , function(result){
-        $("#sendResult").html(result);
+        $("#sendResult").attr('value',"sent");
     });
-    console.log("Submit Success from callback!");
     return false;
 });
 
-//Newsletter
+// Newsletter
 $submittedNews.click(function(){
-    console.log("submit clicked");
+    console.log("submit clicked tru");
     return true;
 });
 
+
 $submittedNews.click(function(e){
+    console.log("submit clicked fal");
     e.preventDefault();
     var news = $("#newsletter");
     var data = news.serialize();
     $.post( news.attr("action") , data , function(result){
-        $("#sendResult").html(result);
+        $("#submitNewsletter").attr('value',"sent");
     });
-    console.log("Submit Success from callback!");
     return false;
 });
 

@@ -77,7 +77,8 @@
   #formContact #submitContact {
     grid-column: 5/8;
     grid-row: 16;
-    margin: 30px 0 30px 0; }
+    margin: 30px 0 30px 0; 
+    cursor: pointer;}
   #formContact #askQ {
     grid-column: 1/13;
     grid-row: 15; }

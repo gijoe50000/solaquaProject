@@ -10494,15 +10494,6 @@ $imageClicked.click(galleryAddClickHandlers());
 /* End of Gallery images $popup*/ 
 
 
-// $popup.style.border="3px solid black";
-
-
-
-
-
-
-
-
 
 /***************contact form************************/
 
@@ -10550,23 +10541,19 @@ function galleryAddClickHandlers() {
         $popup.empty();
         $imageClicked=$('#gallery img');
         $tempImg=$(this).attr('src');
-        $popup.append( '<img src=' +$tempImg +'>' );
-        $popup.css("border", "3px solid black");
+        // $popup.css('max-width','100%');
+        $popup.append( '<img src=' +$tempImg +'>');
+        $('#popup img').css('max-width','100%').css("border", "3px solid black").css("margin", "0 auto");
+        // $tempImg.css("border", "3px solid black");
         $popup.click( 'slow', function(){$popup.hide()});
+    
     });
 }
  
 
-
-
-
-
-
-
-
-
 $prodLink.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
    });
 
 function onLoadProducts(){
@@ -10581,15 +10568,37 @@ $aboutLink.click(function(){
 });
 
 
+
 $newsLink.click(function(){
-    $('main').load('news.html main > *', null, loadNewsScript);
+    $('main').load('news.html #mainNews > *', null, onLoadNewspage);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
-function loadNewsScript(){
-  $.getScript("js/RSSScript.js",null);
-  $.getScript("//feed.surfing-waves.com/js/rss-feed.js",null);
-}
+
+
+
+function onLoadNewspage (){
+    
+    // var addscript1=$.getScript("js/RSSScript.js",null);
+    // var addscript2=$.getScript("js/rss-feed.js",null);
+    // $('main').load('news.html #mainNews > *',null);
+        // $('main').load('news.html #mainNews > *');
+    // $('#newsDiv').get(addscript1);
+    // $('#newsDiv').load(addscript2);
+    // $('#newsDiv').load(addscript1).load(addscript2);
+    // $('#newsDiv').load(addscript1).load(addscript2);
+
+//   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
+    // $('#newsDiv').load(addscript1).load(addscript2);
+
+
+  }
+
+
+
+
+
+
 
 
 $contactLink.click(function(){
@@ -10622,9 +10631,6 @@ function productClickHandler(){
 
 }
 
-
-
-
 function openContactPage (prod){
     $('main').load('contact.html main > *', null, function(){
         selectProdOption(prod);
@@ -10632,15 +10638,11 @@ function openContactPage (prod){
 });
 }
 
-
-
 function selectProdOption(prod){
     prodList=$('#productList');
     options=$('#productList > option');
     prodList.val(prod);
 }
-
-
 
 
 /**** Form *****/
@@ -10662,8 +10664,7 @@ $submitted.click(function(e){
     return false;
 });
 
-
-
+//Newsletter
 $submittedNews.click(function(){
     console.log("submit clicked");
     return true;
@@ -10717,4 +10718,15 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('mapDiv'), { center: solaquaLoc, zoom: 13
     });
     marker=new google.maps.Marker({position: solaquaLoc, icon: "./images/logo/marker.png", map: map});
-}
+}! function () {
+  var e = window,
+    s = "";
+  for (i = 0; i < e.rssfeed_url.length; i++) s = s + "rssfeed[url][" + i + "]=" + 
+  encodeURIComponent(e.rssfeed_url[i]) + "&";
+  var r = ("https:" == document.location.protocol ? "https" : "http") +
+   "://feed.surfing-waves.com/php/rssfeed.php" + "?" + s + "rssfeed[type]=" 
+   + (e.rssfeed_type ? e.rssfeed_type : "") + "&rssfeed[frame_width]=" + 
+   e.rssfeed_frame_width + "&rssfeed[frame_height]=" + e.rssfeed_frame_height + 
+   "&rssfeed[scroll]=" + (e.rssfeed_scroll ? e.rssfeed_scroll : "") + "&rssfeed[scroll_step]=" + (e.rssfeed_scroll_step ? e.rssfeed_scroll_step : "") + "&rssfeed[scroll_bar]=" + (e.rssfeed_scroll_bar ? e.rssfeed_scroll_bar : "") + "&rssfeed[target]=" + (e.rssfeed_target ? e.rssfeed_target : "") + "&rssfeed[font_size]=" + (e.rssfeed_font_size ? e.rssfeed_font_size : "") + "&rssfeed[font_face]=" + (e.rssfeed_font_face ? e.rssfeed_font_face : "") + "&rssfeed[border]=" + (e.rssfeed_border ? e.rssfeed_border : "") + "&rssfeed[css_url]=" + (e.rssfeed_css_url ? encodeURIComponent(e.rssfeed_css_url) : "") + "&rssfeed[title]=" + (e.rssfeed_title ? e.rssfeed_title : "") + "&rssfeed[title_name]=" + (e.rssfeed_title_name ? encodeURIComponent(e.rssfeed_title_name) : "") + "&rssfeed[title_bgcolor]=" + (e.rssfeed_title_bgcolor ? encodeURIComponent(e.rssfeed_title_bgcolor) : "") + "&rssfeed[title_color]=" + (e.rssfeed_title_color ? encodeURIComponent(e.rssfeed_title_color) : "") + "&rssfeed[title_bgimage]=" + (e.rssfeed_title_bgimage ? encodeURIComponent(e.rssfeed_title_bgimage) : "") + "&rssfeed[footer]=" + (e.rssfeed_footer ? e.rssfeed_footer : "") + "&rssfeed[footer_name]=" + (e.rssfeed_footer_name ? encodeURIComponent(e.rssfeed_footer_name) : "") + "&rssfeed[footer_bgcolor]=" + (e.rssfeed_footer_bgcolor ? encodeURIComponent(e.rssfeed_footer_bgcolor) : "") + "&rssfeed[footer_color]=" + (e.rssfeed_footer_color ? encodeURIComponent(e.rssfeed_footer_color) : "") + "&rssfeed[footer_bgimage]=" + (e.rssfeed_footer_bgimage ? encodeURIComponent(e.rssfeed_footer_bgimage) : "") + "&rssfeed[item_bgcolor]=" + (e.rssfeed_item_bgcolor ? encodeURIComponent(e.rssfeed_item_bgcolor) : "") + "&rssfeed[item_bgimage]=" + (e.rssfeed_item_bgimage ? encodeURIComponent(e.rssfeed_item_bgimage) : "") + "&rssfeed[item_title_length]=" + (e.rssfeed_item_title_length ? e.rssfeed_item_title_length : "") + "&rssfeed[item_title_color]=" + (e.rssfeed_item_title_color ? encodeURIComponent(e.rssfeed_item_title_color) : "") + "&rssfeed[item_border_bottom]=" + (e.rssfeed_item_border_bottom ? e.rssfeed_item_border_bottom : "") + "&rssfeed[item_source_icon]=" + (e.rssfeed_item_source_icon ? e.rssfeed_item_source_icon : "") + "&rssfeed[item_date]=" + (e.rssfeed_item_date ? e.rssfeed_item_date : "") + "&rssfeed[item_description]=" + (e.rssfeed_item_description ? e.rssfeed_item_description : "") + "&rssfeed[item_description_length]=" + (e.rssfeed_item_description_length ? e.rssfeed_item_description_length : "") + "&rssfeed[item_description_color]=" + (e.rssfeed_item_description_color ? encodeURIComponent(e.rssfeed_item_description_color) : "") + "&rssfeed[item_description_link_color]=" + (e.rssfeed_item_description_link_color ? encodeURIComponent(e.rssfeed_item_description_link_color) : "") + "&rssfeed[item_description_tag]=" + (e.rssfeed_item_description_tag ? e.rssfeed_item_description_tag : "") + "&rssfeed[no_items]=" + (e.rssfeed_no_items ? e.rssfeed_no_items : "") + "&rssfeed[cache]=" + (e.rssfeed_cache ? e.rssfeed_cache : "");
+  document.write('<iframe name="rssfeed_frame" width="' + e.rssfeed_frame_width + '" height="' + e.rssfeed_frame_height + '" frameborder="0" src="' + r + '" marginwidth="0" marginheight="0" vspace="0" hspace="0" scrolling="no" ALLOWTRANSPARENCY="true"></iframe>')
+}();
