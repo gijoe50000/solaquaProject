@@ -123,10 +123,9 @@ function onLoadProducts(){
 
 ///automatically go to contact page when the order button is clicked on a product.
 function productClickHandler(){
-    console.log("start of function before buy clicked "+ $buyBut.attr('class'));        
-    $buyBut.click(function(){$prod=$(this).attr("id");
-    openContactPage($prod);
-    console.log("outside func buy= "+ this);       
+    $buyBut=$('.buyNow');
+    $buyBut.click(function(){$prod=$(this).attr("id");  
+        openContactPage($prod);
     });
   
 }  
@@ -135,11 +134,8 @@ function productClickHandler(){
 //click order button and go to contact page
 $buyBut.click(function(){
      $prod=$(this).attr("id");   
-    //  console.log("outside func buy= "+ this);
      openContactPage($prod);
 });
-
-
 
 
 
@@ -162,6 +158,8 @@ function selectProdOption($prod){
 
 
 
+
+
 /**********other AJAX links***************/
 
 
@@ -181,7 +179,6 @@ $newsLink.click(function(){
 
 
 function onLoadNewspage (){
-    
     // var addscript1=$.getScript("js/RSSScript.js",null);
     // var addscript2=$.getScript("js/rss-feed.js",null);
     // $('main').load('news.html #mainNews > *',null);
@@ -192,8 +189,6 @@ function onLoadNewspage (){
     // $('#newsDiv').load(addscript1).load(addscript2);
     //   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
     // $('#newsDiv').load(addscript1).load(addscript2);
-
-
   }
 
 

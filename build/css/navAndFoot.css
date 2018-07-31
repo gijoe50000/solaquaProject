@@ -70,9 +70,14 @@ ul {
 footer {
   background: #DFDCDC; }
 
+#mapDiv {
+  margin: 40px 0 0 0;
+  width: 100%;
+  height: 60vh; }
+
 #footerGrid {
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 80%;
   font-size: 1.1rem;
   display: flex;
   flex-direction: row;
@@ -81,6 +86,8 @@ footer {
   #footerGrid .padding_foot {
     padding: 1.5rem 0.5rem;
     margin: 50px auto; }
+  #footerGrid #logos img {
+    margin: 20px 10px; }
   #footerGrid #newsletter {
     background: #DFDCDC;
     max-width: 300px;
@@ -135,10 +142,6 @@ footer {
       #footerGrid #navFooter li a, #footerGrid #policyFooter li a {
         color: #6E6E6E;
         text-align: center; }
-  #footerGrid #mapDiv {
-    margin: 40px 0 0 0;
-    width: 100%;
-    height: 60vh; }
 
 /************** Nav Media Query large screens ************/
 @media (min-width: 800px) {
@@ -172,7 +175,8 @@ footer {
 @media (min-width: 1200px) {
   /*****Footer****/
   #footerGrid {
-    flex-direction: row; }
+    flex-direction: row;
+    max-width: 1400px; }
     #footerGrid #newsletter {
       background: #DFDCDC;
       max-width: 300px;
@@ -189,8 +193,6 @@ footer {
         border-bottom: #6E6E6E 1px solid;
         max-width: 120px; }
         #footerGrid #navFooter li a, #footerGrid #policyFooter li a {
-          color: #6E6E6E; }
-    #footerGrid #logos img {
-      margin: 20px 10px; } }
+          color: #6E6E6E; } }
 
 /************End Of Nav.css***************/
