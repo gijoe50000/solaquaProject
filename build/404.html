@@ -4,20 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/_reset.css">  
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/jquery-ui.css"> 
+    <link rel="stylesheet" href="css/jquery-ui.structure.css"> 
+    <link rel="stylesheet" href="css/navAndFoot.css">
+    <link rel="stylesheet" href="css/contact.css">  
+
+    <title>Not Found!</title>
 </head>
 <body>
-    <main id="notFoundMain">
+    <div id="cookieBanner">
+        <h3 id="cookieHeader">Cookie Notice</h1>
+        <p class="cookiePara ">Do you want to accept cookies?</p>
+        <div class="buttonwrapper">
+            <button id="accept" class="cookieButton hoverBut">Accept</button>
+            <button id="decline" class="cookieButton hoverBut">Decline</button>
+        </div>
+    </div>
+
+    <nav id="home">
+        <a href="index.html#home"> <img src="images/logo/logoAndOutline.png" alt="logo" id="logo" width="80" height="80"></a>
+        <label for="menu-toggle" id="hmbMenu">&#9776</label>
+        <ul id="navListLarge">
+            <li class="homeLink">  <a href="index.html">Home</a></li>
+            <li class="galLink">    <a href="#Gallery">Gallery</a> </li>
+            <li class="prodLink">   <a href="#Products">Products</a></li>        
+            <li class="newsLink">   <a href="#News">News</a>  </li>
+            <li class="aboutLink">  <a href="#About">About Us</a></li>
+            <li class="contactLink"><a href="#Contact">Contact</a>  </li>
+        </ul>
+        <ul id="navList"  >
+            <li class="homeLink">  <a href="index.html">Home</a></li>
+            <li class="galLink">    <a href="#Gallery">Gallery</a> </li>
+            <li class="prodLink">   <a href="#Products">Products</a></li>        
+            <li class="newsLink">   <a href="#News">News</a>  </li>
+            <li class="aboutLink">  <a href="#About">About Us</a></li>
+            <li class="contactLink"><a href="#Contact">Contact</a>  </li>
+        </ul>
+    </nav>
+
+    <a href="#home" id="backToTop">▲ </a> <main id="notFoundMain">
     <section>
         <!-- Page not found -->
         <h2 id="head404">Oops!</h2>
         <div class="content404">
         <p class="para">It looks like there's no page here. 
-           It may have been removed, or maybe it's a glitch in the Matrix..</p>
+           It may have been removed, or maybe it's a glitch in the Matrix.. :-(</p>
         </div>
        
     </section>
 </main>
+
+
+
+
+
+
+
+
+
+<footer>  
+        <div id="mapDiv"></div>
+        <div id="footerGrid">
+            <section id="contact" class="padding_foot">
+                <p id="footAddress">
+                    Solaqua,
+                    <br> Unit 6A,
+                    <br> Eastgate Business Park,
+                    <br> Little Island, 
+                    <br>Co. Cork.  
+                    <br>Q37X058 
+                    <br>
+                    <br>021 4355254  
+                    <br>info@solaqua.com
+                </p>
+                <div id='logos'>
+                    <img src="images/logo/qa.jpg" alt="qa logo" id="logoQa" width="40">
+                    <img src="images/logo/iso.png" alt="iso standard logo" id="logoIso" width="40">
+                    <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
+                </div>
+            </section>
+            <form  name="newsLetter" action="cgiBin/" method="POST" id="newsletter" class="  myBorder padding_foot" netlify>
+                <h4 id="nlhead">SIGN UP FOR NEWSLETTER</h4>
+                <div id="formInput">
+                    <label id="labeln" for="name">Name:</label>
+                    <input id="inputn" type="text" name="name">
+                    <label id="labele" for="email">Email:</label>
+                    <input id="inpute" type="email" name="email">
+                </div>
+                <input type="submit" value="Subscribe" name="submit" id="submitNewsletter" class=" formBut hoverBut">
+            </form>
+            <ul id="navFooter" class="padding_foot">
+                <li class="homeLink">  <a href="index.html">Home</a></li>
+                <li class="galLink">    <a href="#Gallery">Gallery</a> </li>
+                <li class="prodLink">   <a href="#Products">Products</a></li>        
+                <li class="newsLink">   <a href="#News">News</a>  </li>
+                <li class="aboutLink">  <a href="#About">About Us</a></li>
+                <li class="contactLink"><a href="#Contact">Contact</a>  </li>
+            </ul>
+            <ul id="policyFooter" class="padding_foot">
+                <li>  <a href="tandc.html">Terms and Conditions </a>  </li>
+                <li>  <a href="Cookie_Policy.html">Cookie Policy</a> </li>
+                <li>  <a href="Privacy_Policy.html">Privacy Policy</a> </li>
+                <li id='siteLink'>  <a href="#Site_map">Sitemap</a>        </li>    
+            </ul>
+        </div>       <!-- footer Grid -->
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRkMjmHf-RO698y7xxC4Aw6SlWusOOFm8&callback=initMap"async defer></script>
+    
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/kontent.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/RSSScript.js"></script>  
+    <script src="js/cookieBanner.js"></script>
+
+
+
+
+
 
 </body>
 </html>
