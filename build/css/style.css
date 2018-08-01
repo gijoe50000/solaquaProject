@@ -17,7 +17,7 @@ body {
 
 #cookieBanner {
   font-family: Montserrat;
-  display: flex;
+  display: none;
   flex-direction: row;
   position: fixed;
   flex-wrap: wrap;
@@ -70,8 +70,8 @@ body {
   padding: 8px;
   line-height: 1;
   color: #111;
-  bottom: 30px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   z-index: 1; }
 
 #free {
@@ -94,19 +94,26 @@ h2 {
   font-family: Raleway;
   font-size: 3rem;
   font-weight: 900;
-  margin: 80px 0 30px 0;
+  margin: 80px 0 40px 0;
   text-shadow: 1px 1px 4px #bbbbbb; }
 
 h3 {
   font-family: Montserrat;
   font-size: 2.2rem;
   font-weight: 900;
-  padding: 100px 30px 30px 30px; }
+  padding: 50px 30px 20px 30px; }
 
 h4 {
   font-size: 1.8rem;
   font-weight: 500;
   padding: 10px 0 1px 0; }
+
+img {
+  margin: 0 0 30px 0; }
+
+.productHeadings {
+  height: 140px;
+  padding: 5% 2% 1% 2%; }
 
 .fullImg {
   max-width: 100%;
@@ -127,9 +134,11 @@ button {
   width: 80%; }
 
 .para {
-  font-size: 1.2rem;
-  line-height: 1.2;
-  margin: 30px 20px 100px 20px;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.0008rem;
+  margin: 10px 30px 60px 30px;
   font-weight: 100; }
 
 #bkimg2 {
@@ -200,13 +209,14 @@ button {
 #contProducts {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 4fr));
   grid-gap: 50px;
   margin: 10px auto; }
 
 .myBorder {
-  border: #bbbbbb solid 2px;
-  border-radius: 0.3%; }
+  border: #6E6E6E solid 2px;
+  box-shadow: 1px 1px 5px 3px #6E6E6E;
+  border-radius: 0.8%; }
 
 .product {
   display: flex;
@@ -280,6 +290,10 @@ button {
   text-decoration: underline;
   color: #ccc; }
 
+#siteLink, .siteMap {
+  text-decoration-line: underline;
+  text-align: left; }
+
 /************End Of Style***************/
 /************** Gallery Media Query ****************************/
 @media (min-width: 800px) {
@@ -309,3 +323,7 @@ button {
     grid-column: 1/6; }
   #contProducts {
     margin: 10px 30px; } }
+
+@media (min-width: 1707px) {
+  .productHeadings {
+    height: 120px; } }

@@ -48,18 +48,17 @@ var name = "Bob";
 accept.addEventListener('click', setCookie);
 decline.addEventListener('click', removeBanner);
 
+if (!checkForCookie(cookieId)) {
+        displayBanner();
+    }else{
+        removeBanner();}
 
-if (checkForCookie(cookieId)) {
-    removeBanner();
-    }
-
-
+//if cookie position is > 0 return the position. basically true of false
 function checkForCookie(cookieId) {
     var nvp = document.cookie;
     var pos = nvp.search(cookieId);
     if (pos>=0) {return pos;}
     } 
-
 
 function setCookie() {
     var expiry = "Thu Jan 01 2070 01:00:00 GMT+0100 (Greenwich Mean Time)";
@@ -67,12 +66,13 @@ function setCookie() {
     removeBanner();
     }
 
+function displayBanner() {
+    cookieContainer.style.display = "flex";
+    }
 
 function removeBanner() {
     cookieContainer.style.display = "none";
     }
-
-
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10460,17 +10460,16 @@ var $prodLink=$('.prodLink');
 var $aboutLink=$('.aboutLink');
 var $newsLink=$('.newsLink');
 var $contactLink=$('.contactLink');
+var $siteMap=$('#siteLink');
+var $prod;
 var $buyBut=$('.buyNow');
 var $submitted=$('#submitContact');
 var $submittedNews=$('#submitNewsletter');
 var $popup= $('#popup'); 
 var $imageClicked=$('#gallery img');
 var $tempImg;
-$('html, body').animate({ scrollTop: 0 }, 'slow');
-
 
 $navList.hide();
-
 $navList.click('slow', function(){
     $navList.hide();
 });
@@ -10510,7 +10509,6 @@ $imageClicked.click(galleryAddClickHandlers());
 
 
 //Load home main content
-
 $homeLink.click(function(){
 $   ('main').load('index.html main > *');
 });
@@ -10551,16 +10549,67 @@ function galleryAddClickHandlers() {
 }
  
 
+
+/*****************Products**********************/
+//load products page into index.html
 $prodLink.click(function(){
     $('main').load('products.html main > *', null, onLoadProducts);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
+    console.log("prodlink");
    });
 
+
+   //load jqueryui tabs and set up click handler
 function onLoadProducts(){
     $('#contProductTabs').tabs();
      $('html, body').animate({ scrollTop: 0 }, 'slow');
-    productClickHandler();
+     console.log("load prod page");
+     productClickHandler();
 }
+
+
+
+///automatically go to contact page when the order button is clicked on a product.
+function productClickHandler(){
+    $buyBut=$('.buyNow');
+    $buyBut.click(function(){$prod=$(this).attr("id");  
+        openContactPage($prod);
+    });
+  
+}  
+
+
+//click order button and go to contact page
+$buyBut.click(function(){
+     $prod=$(this).attr("id");   
+     openContactPage($prod);
+});
+
+
+
+// And pass in the product name to the select list
+function openContactPage ($prod){
+    $('main').load('contact.html main > *', null, function(){
+        selectProdOption($prod);
+        });
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+
+
+
+    // just for the select box on contact page
+function selectProdOption($prod){
+    prodList=$('#productList');
+    options=$('#productList > option');
+    prodList.val($prod);
+    }
+
+
+
+
+
+/**********other AJAX links***************/
+
 
 $aboutLink.click(function(){
     $('main').load('aboutus.html main > *');
@@ -10578,7 +10627,6 @@ $newsLink.click(function(){
 
 
 function onLoadNewspage (){
-    
     // var addscript1=$.getScript("js/RSSScript.js",null);
     // var addscript2=$.getScript("js/rss-feed.js",null);
     // $('main').load('news.html #mainNews > *',null);
@@ -10587,18 +10635,9 @@ function onLoadNewspage (){
     // $('#newsDiv').load(addscript2);
     // $('#newsDiv').load(addscript1).load(addscript2);
     // $('#newsDiv').load(addscript1).load(addscript2);
-
-//   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
+    //   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
     // $('#newsDiv').load(addscript1).load(addscript2);
-
-
   }
-
-
-
-
-
-
 
 
 $contactLink.click(function(){
@@ -10607,79 +10646,57 @@ $contactLink.click(function(){
     });
 
 
-
-
-
-
     
-/*************************** products **********************/
 
 
-    
-$buyBut.click(function(but){
-        var prod=$(this).attr("id");   
-        openContactPage(prod);
+    $siteMap.click(function(){
+        $('main').load('site_map.html main > *');
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
 
-//whewn buy button is clicked, pass the product to buy (contact) page
-function productClickHandler(){
-        $buyBut.click(function(){
-        var prod=$(this).attr("id");   
-        openContactPage(prod);
-    });
-
-}
-
-function openContactPage (prod){
-    $('main').load('contact.html main > *', null, function(){
-        selectProdOption(prod);
-        var $submitted=$('#submitContact');
-});
-}
-
-function selectProdOption(prod){
-    prodList=$('#productList');
-    options=$('#productList > option');
-    prodList.val(prod);
-}
 
 
 /**** Form *****/
 
 $submitted.click(function(){
-    console.log("submit clicked from not cb");
+    console.log("submit clicked tru");
     return true;
 });
 
 
 $submitted.click(function(e){
+    console.log("submit clicked fal");
     e.preventDefault();
     var form = $("#formContact");
     var data = form.serialize();
     $.post( form.attr("action") , data , function(result){
-        $("#sendResult").html(result);
+        $("#sendResult").attr('value',"sent");
     });
-    console.log("Submit Success from callback!");
     return false;
 });
 
-//Newsletter
+// Newsletter
 $submittedNews.click(function(){
-    console.log("submit clicked");
+    console.log("submit clicked tru");
     return true;
 });
 
+
 $submittedNews.click(function(e){
+    console.log("submit clicked fal");
     e.preventDefault();
     var news = $("#newsletter");
     var data = news.serialize();
     $.post( news.attr("action") , data , function(result){
-        $("#sendResult").html(result);
+        $("#submitNewsletter").attr('value',"sent");
     });
-    console.log("Submit Success from callback!");
     return false;
 });
+
+
+
+
 
 
 }); //end file
@@ -10721,12 +10738,31 @@ function initMap() {
 }! function () {
   var e = window,
     s = "";
-  for (i = 0; i < e.rssfeed_url.length; i++) s = s + "rssfeed[url][" + i + "]=" + 
-  encodeURIComponent(e.rssfeed_url[i]) + "&";
+  for (i = 0; i < e.rssfeed_url.length; i++) s = s + "rssfeed[url][" + i + "]=" +
+    encodeURIComponent(e.rssfeed_url[i]) + "&";
   var r = ("https:" == document.location.protocol ? "https" : "http") +
-   "://feed.surfing-waves.com/php/rssfeed.php" + "?" + s + "rssfeed[type]=" 
-   + (e.rssfeed_type ? e.rssfeed_type : "") + "&rssfeed[frame_width]=" + 
-   e.rssfeed_frame_width + "&rssfeed[frame_height]=" + e.rssfeed_frame_height + 
-   "&rssfeed[scroll]=" + (e.rssfeed_scroll ? e.rssfeed_scroll : "") + "&rssfeed[scroll_step]=" + (e.rssfeed_scroll_step ? e.rssfeed_scroll_step : "") + "&rssfeed[scroll_bar]=" + (e.rssfeed_scroll_bar ? e.rssfeed_scroll_bar : "") + "&rssfeed[target]=" + (e.rssfeed_target ? e.rssfeed_target : "") + "&rssfeed[font_size]=" + (e.rssfeed_font_size ? e.rssfeed_font_size : "") + "&rssfeed[font_face]=" + (e.rssfeed_font_face ? e.rssfeed_font_face : "") + "&rssfeed[border]=" + (e.rssfeed_border ? e.rssfeed_border : "") + "&rssfeed[css_url]=" + (e.rssfeed_css_url ? encodeURIComponent(e.rssfeed_css_url) : "") + "&rssfeed[title]=" + (e.rssfeed_title ? e.rssfeed_title : "") + "&rssfeed[title_name]=" + (e.rssfeed_title_name ? encodeURIComponent(e.rssfeed_title_name) : "") + "&rssfeed[title_bgcolor]=" + (e.rssfeed_title_bgcolor ? encodeURIComponent(e.rssfeed_title_bgcolor) : "") + "&rssfeed[title_color]=" + (e.rssfeed_title_color ? encodeURIComponent(e.rssfeed_title_color) : "") + "&rssfeed[title_bgimage]=" + (e.rssfeed_title_bgimage ? encodeURIComponent(e.rssfeed_title_bgimage) : "") + "&rssfeed[footer]=" + (e.rssfeed_footer ? e.rssfeed_footer : "") + "&rssfeed[footer_name]=" + (e.rssfeed_footer_name ? encodeURIComponent(e.rssfeed_footer_name) : "") + "&rssfeed[footer_bgcolor]=" + (e.rssfeed_footer_bgcolor ? encodeURIComponent(e.rssfeed_footer_bgcolor) : "") + "&rssfeed[footer_color]=" + (e.rssfeed_footer_color ? encodeURIComponent(e.rssfeed_footer_color) : "") + "&rssfeed[footer_bgimage]=" + (e.rssfeed_footer_bgimage ? encodeURIComponent(e.rssfeed_footer_bgimage) : "") + "&rssfeed[item_bgcolor]=" + (e.rssfeed_item_bgcolor ? encodeURIComponent(e.rssfeed_item_bgcolor) : "") + "&rssfeed[item_bgimage]=" + (e.rssfeed_item_bgimage ? encodeURIComponent(e.rssfeed_item_bgimage) : "") + "&rssfeed[item_title_length]=" + (e.rssfeed_item_title_length ? e.rssfeed_item_title_length : "") + "&rssfeed[item_title_color]=" + (e.rssfeed_item_title_color ? encodeURIComponent(e.rssfeed_item_title_color) : "") + "&rssfeed[item_border_bottom]=" + (e.rssfeed_item_border_bottom ? e.rssfeed_item_border_bottom : "") + "&rssfeed[item_source_icon]=" + (e.rssfeed_item_source_icon ? e.rssfeed_item_source_icon : "") + "&rssfeed[item_date]=" + (e.rssfeed_item_date ? e.rssfeed_item_date : "") + "&rssfeed[item_description]=" + (e.rssfeed_item_description ? e.rssfeed_item_description : "") + "&rssfeed[item_description_length]=" + (e.rssfeed_item_description_length ? e.rssfeed_item_description_length : "") + "&rssfeed[item_description_color]=" + (e.rssfeed_item_description_color ? encodeURIComponent(e.rssfeed_item_description_color) : "") + "&rssfeed[item_description_link_color]=" + (e.rssfeed_item_description_link_color ? encodeURIComponent(e.rssfeed_item_description_link_color) : "") + "&rssfeed[item_description_tag]=" + (e.rssfeed_item_description_tag ? e.rssfeed_item_description_tag : "") + "&rssfeed[no_items]=" + (e.rssfeed_no_items ? e.rssfeed_no_items : "") + "&rssfeed[cache]=" + (e.rssfeed_cache ? e.rssfeed_cache : "");
-  document.write('<iframe name="rssfeed_frame" width="' + e.rssfeed_frame_width + '" height="' + e.rssfeed_frame_height + '" frameborder="0" src="' + r + '" marginwidth="0" marginheight="0" vspace="0" hspace="0" scrolling="no" ALLOWTRANSPARENCY="true"></iframe>')
+    "://feed.surfing-waves.com/php/rssfeed.php" + "?" + s + "rssfeed[type]=" +
+    (e.rssfeed_type ? e.rssfeed_type : "") + "&rssfeed[frame_width]=" +
+    e.rssfeed_frame_width + "&rssfeed[frame_height]=" + e.rssfeed_frame_height +
+    "&rssfeed[scroll]=" + (e.rssfeed_scroll ? e.rssfeed_scroll : "") + "&rssfeed[scroll_step]=" +
+    (e.rssfeed_scroll_step ? e.rssfeed_scroll_step : "") + "&rssfeed[scroll_bar]=" +
+    (e.rssfeed_scroll_bar ? e.rssfeed_scroll_bar : "") + "&rssfeed[target]=" +
+    (e.rssfeed_target ? e.rssfeed_target : "") + "&rssfeed[font_size]=" +
+    (e.rssfeed_font_size ? e.rssfeed_font_size : "") + "&rssfeed[font_face]=" +
+    (e.rssfeed_font_face ? e.rssfeed_font_face : "") + "&rssfeed[border]=" +
+    (e.rssfeed_border ? e.rssfeed_border : "") + "&rssfeed[css_url]=" +
+    (e.rssfeed_css_url ? encodeURIComponent(e.rssfeed_css_url) : "") +
+    "&rssfeed[title]=" + (e.rssfeed_title ? e.rssfeed_title : "") + "&rssfeed[title_name]=" +
+    (e.rssfeed_title_name ? encodeURIComponent(e.rssfeed_title_name) : "") +
+    "&rssfeed[title_bgcolor]=" +
+    (e.rssfeed_title_bgcolor ? encodeURIComponent(e.rssfeed_title_bgcolor) : "") +
+    "&rssfeed[title_color]=" +
+    (e.rssfeed_title_color ? encodeURIComponent(e.rssfeed_title_color) : "") +
+    "&rssfeed[title_bgimage]=" +
+    (e.rssfeed_title_bgimage ? encodeURIComponent(e.rssfeed_title_bgimage) : "") + "&rssfeed[footer]=" + (e.rssfeed_footer ? e.rssfeed_footer : "") + "&rssfeed[footer_name]=" + (e.rssfeed_footer_name ? encodeURIComponent(e.rssfeed_footer_name) : "") + "&rssfeed[footer_bgcolor]=" + (e.rssfeed_footer_bgcolor ? encodeURIComponent(e.rssfeed_footer_bgcolor) : "") + "&rssfeed[footer_color]=" + (e.rssfeed_footer_color ? encodeURIComponent(e.rssfeed_footer_color) : "") + "&rssfeed[footer_bgimage]=" + (e.rssfeed_footer_bgimage ? encodeURIComponent(e.rssfeed_footer_bgimage) : "") + "&rssfeed[item_bgcolor]=" + (e.rssfeed_item_bgcolor ? encodeURIComponent(e.rssfeed_item_bgcolor) : "") + "&rssfeed[item_bgimage]=" + (e.rssfeed_item_bgimage ? encodeURIComponent(e.rssfeed_item_bgimage) : "") + "&rssfeed[item_title_length]=" + (e.rssfeed_item_title_length ? e.rssfeed_item_title_length : "") + "&rssfeed[item_title_color]=" + (e.rssfeed_item_title_color ? encodeURIComponent(e.rssfeed_item_title_color) : "") + "&rssfeed[item_border_bottom]=" + (e.rssfeed_item_border_bottom ? e.rssfeed_item_border_bottom : "") + "&rssfeed[item_source_icon]=" + (e.rssfeed_item_source_icon ? e.rssfeed_item_source_icon : "") + "&rssfeed[item_date]=" + (e.rssfeed_item_date ? e.rssfeed_item_date : "") + "&rssfeed[item_description]=" + (e.rssfeed_item_description ? e.rssfeed_item_description : "") + "&rssfeed[item_description_length]=" + (e.rssfeed_item_description_length ? e.rssfeed_item_description_length : "") + "&rssfeed[item_description_color]=" + (e.rssfeed_item_description_color ? encodeURIComponent(e.rssfeed_item_description_color) : "") + "&rssfeed[item_description_link_color]=" + (e.rssfeed_item_description_link_color ? encodeURIComponent(e.rssfeed_item_description_link_color) : "") + "&rssfeed[item_description_tag]=" + (e.rssfeed_item_description_tag ? e.rssfeed_item_description_tag : "") + "&rssfeed[no_items]=" + (e.rssfeed_no_items ? e.rssfeed_no_items : "") +
+    "&rssfeed[cache]=" + (e.rssfeed_cache ? e.rssfeed_cache : "");
+
+
+ var cont= document.getElementById('newsContainer');
+ cont.innerHTML=('<iframe name="rssfeed_frame" width="' + e.rssfeed_frame_width + '" height="' + e.rssfeed_frame_height + '" frameborder="0" src="' + r + '" marginwidth="0" marginheight="0" vspace="0" hspace="0" scrolling="no" ALLOWTRANSPARENCY="true"></iframe>')
 }();

@@ -81,8 +81,8 @@
 
         <!-- ----------Gallery---------- -->
         <div id="popup"></div>
-            <h2 id="galleryHeader" contained90>GALLERY</h2>
-            <section id="galleryHome" >
+            <h2 id="galleryHeader" class=" ">GALLERY</h2>
+            <section id="galleryHome" class=" myBorder" >
                 <img src="images/large/mainlarge.jpg" alt="" class="galImg ">
                 <img src="images/small/8.jpg" alt="" class="galImg" >
                 <img src="images/small/9.jpg" alt="" class="galImg galImg2"  >
@@ -93,10 +93,10 @@
 
 
         <!--Products-->
-        <h2 id="productHeader">PRODUCTS</h2>
-            <section id="contProducts">
+        <h2 id="productHeader" class=" ">PRODUCTS</h2>
+            <section id="contProducts" class="">
                 <article class="product myBorder " id="charging">
-                    <h3>Portable chargers &amp; panels</h3>
+                    <h3 class="productHeadings">Portable chargers &amp; panels</h3>
                     <img src="images/small/13.jpg" alt="" class=" prodImg">
                     <p class="para">Thanks to a super-sized 40W solar panel charger, the Solaqua-mini offers a beefy 2.8A (Amps) of power capable
                         of re-charging smartphones, tablets and powering any outdoor devices such as electronic road signs, small
@@ -107,7 +107,7 @@
                         <button class="buyNow hoverBut" id="charging" >Order Now</button>
                 </article>
                 <article class="product myBorder" id="portable">
-                    <h3>Car charging station</h3>
+                    <h3 class="productHeadings">Car charging station  </h3>
                     <img src="images/large/charging_station_med.jpg" alt="" class="  prodImg">
                     <p class="para">These products enable recharging of vehicles at charging points incorporating integrated renewable energy generation.
                         This means that the energy used has reduced CO2 emissions as well as other pollutants. The 2kWh lithium battery
@@ -116,7 +116,7 @@
                     <button class="buyNow hoverBut" id="portable">Order Now</button>
                 </article>
                 <article class="product myBorder" id="readymade">
-                    <h3>Ready made panels</h3>
+                    <h3 class="productHeadings">Ready made panels </h3>
                     <img src="images/small/8.jpg" alt="" class=" prodImg">
                     <p class="para">Meet Part L on houses up to 140m2 house for under €1000 Our Solar Photovoltaic (PV) panels convert daylight to
                         electricity efficiently No water, overheating or maintenance. The most economical way to meet the renewables
@@ -124,7 +124,7 @@
                     <button class="buyNow hoverBut" id="readymade">Order Now</button>
                 </article>
                 <article class="product myBorder" id="custommade">
-                    <h3>Custom size panels</h3>
+                    <h3 class="productHeadings">Custom size panels </h3>
                     <img src="images/small/7.jpg" alt="" class="  prodImg">
                     <p class="para">We provide customized solar energy solution to fit your product design and available space, while achieving required
                         power and efficiency. </p>
@@ -137,6 +137,9 @@
             <!-- RSS Feed -->
             <section id="newsFeed">
                 <h2 id="news">NEWS</h2>
+                <div id="newsContainer">
+
+                </div>
                 <script src="js/RSSScript.js"></script>
                 <script type="text/javascript" src="js/rss-feed.js"></script>
             </section>
@@ -174,7 +177,7 @@
                     <img src="images/logo/logoAndOutline.png" alt="logo" id="logoMainFooter" width="40">
                 </div>
             </section>
-            <form  name="newsLetter" action="cgiBin/" method="POST" id="newsletter" class="  myBorder padding_foot">
+            <form  name="newsLetter" action="cgiBin/" method="POST" id="newsletter" class="  myBorder padding_foot" netlify>
                 <h4 id="nlhead">SIGN UP FOR NEWSLETTER</h4>
                 <div id="formInput">
                     <label id="labeln" for="name">Name:</label>
@@ -196,7 +199,7 @@
                 <li>  <a href="tandc.html">Terms and Conditions </a>  </li>
                 <li>  <a href="Cookie_Policy.html">Cookie Policy</a> </li>
                 <li>  <a href="Privacy_Policy.html">Privacy Policy</a> </li>
-                <li>  <a href="site_Map.html">Sitemap</a>        </li>    
+                <li id='siteLink'>  <a href="#Site_map">Sitemap</a>        </li>    
             </ul>
         </div>       <!-- footer Grid -->
     </footer>

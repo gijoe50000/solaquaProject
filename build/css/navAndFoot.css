@@ -41,14 +41,15 @@ ul {
 
 #navList {
   display: none;
-  position: fixed;
+  position: absolute;
   right: 0px;
   top: 80px;
   width: 100vw;
   display: flex;
   flex-direction: column;
   font-size: 1.6rem;
-  background: rgba(110, 110, 110, 0.7); }
+  background: rgba(110, 110, 110, 0.7);
+  overflow: visible; }
   #navList a {
     color: #E5E5E5; }
   #navList li {
@@ -145,6 +146,8 @@ footer {
 
 /************** Nav Media Query large screens ************/
 @media (min-width: 800px) {
+  #navList {
+    display: none; }
   #hmbMenu {
     display: none; }
   #navListLarge {

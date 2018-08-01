@@ -10,36 +10,44 @@ $colourbla:#111;
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 
-
-
 #formContact{
+
+
+}
+
+@mixin myBorder{
+    border: $colourdg solid 2px;
+    box-shadow: 1px 1px 5px 3px $colourdg;
+    border-radius: 0.8%;
+    margin: 0 1%;
+}
+
+#formContactInner{
+    @include myBorder;
+    background: $colourlg;
     display:grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     font-size: 1.6em;
-    grid-row-gap: 15px;
-    max-width: 400px;
-    margin:0 auto;
-    padding: 0 1rem;
-
-    h2{
-        grid-column: 1/13;
-        grid-row: 1;
-        justify-self: center;
+    grid-row-gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    border:3px solid $colourbla;
+    
+   
+    input[type=text],[type= email],[type= tel],[type= date],[type= check], select{height:30px;
     }
-
-
-    #para1{
-        grid-column: 1/13;
-        grid-row: 2;
-        
-        margin: 0 1rem;
-    }
-
+   
 
 
     #labOrder{ grid-column: 1/7;
         grid-row: 3;}
+
+    #inpCheck{ grid-column: 8/13;
+        grid-row: 3;
+        padding-left:50px;
+    }
 
     #labname{ grid-column: 1/7;
         grid-row: 4;}
@@ -51,8 +59,6 @@ $colourbla:#111;
         grid-row: 9;}
     #labcomment{ grid-column: 1/7;
         grid-row: 10;}
-
-
     #inpname{ grid-column: 7/13;
         grid-row: 4;
     }
@@ -65,13 +71,13 @@ $colourbla:#111;
     #inpadd3{ grid-column: 7/13;
         grid-row: 7;
     }
-    #inptel{ grid-column: 7/12;
+    #inptel{ grid-column: 7/13;
         grid-row: 8;
     }
-    #inpmail{ grid-column: 7/12;
+    #inpmail{ grid-column: 7/13;
         grid-row: 9;
     }
-    #inpcomment{ grid-column: 7/12;
+    #inpcomment{ grid-column: 7/13;
         grid-row: 10;
     }
 
@@ -79,6 +85,8 @@ $colourbla:#111;
     .italctext{
         grid-column: 1/13;
         grid-row: 12; 
+        font-style: italic;
+        padding:30px;
     }
 
     #labinstallDate{ 
@@ -87,7 +95,7 @@ $colourbla:#111;
     }
     
     #installDate{ 
-        grid-column: 7/12;
+        grid-column: 7/13;
         grid-row: 13;
     }
 
@@ -98,7 +106,7 @@ $colourbla:#111;
     }
     
     #productList{ 
-        grid-column: 7/12;
+        grid-column: 7/13;
         grid-row: 14;
     }
     
@@ -119,12 +127,13 @@ $colourbla:#111;
         grid-column: 1/13;
         grid-row: 17;
         }
+}//End formContactInner
 
 
-
-    .boldTextContact{
-        font-weight: bold;
-        font-size:1.4rem;
+.boldTextContact{
+    font-weight: bold;
+    font-size:1.4rem; 
+    padding:30px;
+    width:60vw;
+  margin:0 auto;
     }
-
-}

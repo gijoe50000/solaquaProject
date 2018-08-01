@@ -1,11 +1,12 @@
 <main id="contactMain">
     <!-- Form -->
-        <form name="contact" action="cgiBin/" method="POST" id="formContact">
+        <form name="contact" action="cgiBin/" method="POST" id="formContact" netlify>
+      
             <h2 >Contact Us</h2>
-            <p id="para1">If you want to order a product enter the product code, if you were automatically redirected here from the product
+            <p class="para">If you want to order a product enter the product code, if you were automatically redirected here from the product
                 page then this will be filled out already. For installations, enter a date and time that suits you, and we will
                 contact you shortly to confirm.</p>
-        
+          <div id="formContactInner">
             <label id= "labOrder" for="checkbox">Do you want to order a product?</label>
             <input id= "inpCheck" type="checkbox" name="checkbox">
             <label id= "labname" for="name">Name:</label>
@@ -32,10 +33,15 @@
                 <option value="charging">Car Charging Station</option>
                 <option value="portable">Portable Charging Equipment</option>
             </select>
+         
+      
             
+
             <input type="submit" value="Send" name="submit" id="submitContact" class= " formBut hoverBut">
                 <div class="boldTextContact padding " id="sendResult"></div>
-            <p id= "askQ" class=" boldTextContact">If you have any questions, 
+           </div>
+         
+                <p id= "askQ" class=" boldTextContact">If you have any questions, 
                 please don’t hesitate to ask. We are happy to hear from you!</p>
 
         </form>

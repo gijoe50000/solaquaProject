@@ -9,19 +9,16 @@ var $prodLink=$('.prodLink');
 var $aboutLink=$('.aboutLink');
 var $newsLink=$('.newsLink');
 var $contactLink=$('.contactLink');
+var $siteMap=$('#siteLink');
 var $prod;
-
 var $buyBut=$('.buyNow');
-
 var $submitted=$('#submitContact');
 var $submittedNews=$('#submitNewsletter');
 var $popup= $('#popup'); 
 var $imageClicked=$('#gallery img');
 var $tempImg;
-$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 $navList.hide();
-
 $navList.click('slow', function(){
     $navList.hide();
 });
@@ -201,6 +198,11 @@ $contactLink.click(function(){
     
 
 
+    $siteMap.click(function(){
+        $('main').load('site_map.html main > *');
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+    });
+
 
 
 
@@ -240,6 +242,10 @@ $submittedNews.click(function(e){
     });
     return false;
 });
+
+
+
+
 
 
 }); //end file

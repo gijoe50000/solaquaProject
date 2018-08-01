@@ -59,10 +59,12 @@ ul{
     font-size: 1.52rem;
   }
 
+
+
 //smaller screens
   #navList{
     display:none;
-    position:fixed;
+    position:absolute;
     right:0px;
     top:80px;
     width:100vw;
@@ -70,6 +72,8 @@ ul{
     flex-direction: column;
     font-size: 1.6rem;
     background: rgba(110,110,110,0.7);
+    overflow: visible;
+    
 
   
       a{
@@ -227,6 +231,12 @@ footer{
  
  @media(min-width: "800px") { 
        
+  #navList{
+    display:none;
+  }
+
+
+
   #hmbMenu {display:none;}
 
   #navListLarge {
@@ -238,32 +248,31 @@ footer{
       align-items: center;
       background: $colourlg;
     
+        li {
+          padding: 15px 15px 15px 1px;
+          // border: 1px solid $colourlg;
+          background: $colourlg;
+        }
 
-            li {
-              padding: 15px 15px 15px 1px;
-              // border: 1px solid $colourlg;
-              background: $colourlg;
-            }
+        li:hover {
+          background: white;
+          // border-radius: 8px;
+          box-shadow: inset $colourlg -1px -1px 1px;
+          a { color: $colourgre;}
+        }
 
-            li:hover {
-              background: white;
-              // border-radius: 8px;
-              box-shadow: inset $colourlg -1px -1px 1px;
-              a { color: $colourgre;}
-            }
-
-            li:active {
-              background: white;
-              // border-radius: 8px;
-              box-shadow: inset $colourdg 1px 1px 1px;
-                a { color: $colourdg;}
-              }
+        li:active {
+          background: white;
+          // border-radius: 8px;
+          box-shadow: inset $colourdg 1px 1px 1px;
+            a { color: $colourdg;}
+          }
 
 
-            a {
-              color: $colourdg;
-                padding: 0 10px;
-              }
+        a {
+          color: $colourdg;
+          padding: 0 10px;
+          }
 
   } //end nav list large
  } //end media 800 and up

@@ -8,7 +8,6 @@
 // $colourmg:#DFDCDC;
 $colourlg:#e2e2e2;
 $colourmg:#bbbbbb;
-
 $colourdg:#6E6E6E;
 $colourgre:#41E800;
 $colourblu:#0040FF;
@@ -32,7 +31,8 @@ body {
 
 #cookieBanner{
     font-family:Montserrat; 
-    display:flex;
+    display:none;
+    // display:flex;
     flex-direction: row;
     position:fixed;
     flex-wrap: wrap;
@@ -94,8 +94,8 @@ body {
     padding: 8px;
     line-height: 1;
     color: $colourbla;
-    bottom: 30px;
-    right: 30px;
+    bottom: 10px;
+    right: 10px;
     z-index: 1;
 }
 
@@ -106,7 +106,6 @@ body {
 
 h1 {
     font-family: Arvo;
-
     width: 100%;
     position: absolute;
     top: 10rem;
@@ -118,26 +117,44 @@ h1 {
     text-transform: uppercase;
 }
 
+@mixin myBorder{
+    border: $colourdg solid 2px;
+    box-shadow: 1px 1px 5px 3px $colourdg;
+    border-radius: 0.8%;
+    margin: 0 1%;
+}
+
 h2 {
+    //   @include myBorder;
     font-family: Raleway;
     font-size: 3rem;
     font-weight: 900;
-    margin: 80px 0 30px 0;
+    margin: 80px 0 40px 0;
     text-shadow: 1px 1px 4px $colourmg;
-    // color: $colourgre;
+  
     }
 
 h3 {
     font-family: Montserrat;
     font-size: 2.2rem;
     font-weight: 900;
-    padding: 100px 30px 30px 30px;
+    padding: 50px 30px 20px 30px;
+ 
+    // word-wrap:
 }
 
 h4 {
     font-size: 1.8rem;
     font-weight: 500;
     padding: 10px 0 1px 0;
+}
+
+img{margin:0 0 30px 0;}
+
+.productHeadings{
+    height:140px;
+    padding: 5% 2% 1% 2%;
+    
 }
 
 .fullImg {
@@ -162,10 +179,11 @@ button {
 }
 
 .para {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    // margin: 20px 2rem;
-    margin: 30px 20px 100px 20px;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    letter-spacing:0.05rem;
+    word-spacing:0.0008rem;
+    margin: 10px 30px 60px 30px;
     font-weight: 100;
 }
 
@@ -262,7 +280,8 @@ button {
    
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 4fr));
+    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 50px;
     margin: 10px auto;
   
@@ -272,9 +291,9 @@ button {
 
 
 .myBorder{  
-    border: $colourmg solid 2px;
-    // box-shadow: 1px 1px 5px 3px $colourmg;
-    border-radius: 0.3%;
+    border: $colourdg solid 2px;
+    box-shadow: 1px 1px 5px 3px $colourdg;
+    border-radius: 0.8%;
 }
 
 
@@ -295,6 +314,7 @@ button {
 
 .prodImg {
     max-width: 100%;
+
 }
 
 
@@ -319,6 +339,11 @@ button {
 
 
 
+#siteLink, .siteMap {
+    text-decoration-line: underline;
+    text-align: left; 
+}
+
 /************End Of Style***************/
 
 
@@ -326,7 +351,6 @@ button {
     /************** Gallery Media Query ****************************/
     @media(min-width: "800px") { //large screens
            
-
         .galImg2{
             display: inline-block;
         }
@@ -382,3 +406,9 @@ button {
         }
     }
 
+@media(min-width:"1707px"){
+    
+.productHeadings{
+    height:120px;
+}
+}
