@@ -144,6 +144,12 @@ footer {
         color: #6E6E6E;
         text-align: center; }
 
+.footcopy {
+  background: #DFDCDC;
+  font-size: 1rem;
+  padding: 4px;
+  margin-bottom: 3px; }
+
 /************** Nav Media Query large screens ************/
 @media (min-width: 800px) {
   #navList {

@@ -16,6 +16,33 @@ body {
   text-align: center;
   width: 100%; }
 
+.padding {
+  padding: 20px; }
+
+.para {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  letter-spacing: -0.0rem;
+  word-spacing: 0.1rem;
+  margin: 10px 30px 60px 30px;
+  font-weight: 100; }
+
+.myBorder {
+  border: #6E6E6E solid 2px;
+  box-shadow: 1px 1px 5px 3px #6E6E6E;
+  border-radius: 0.8%; }
+
+#backToTop {
+  position: fixed;
+  font-size: 40px;
+  padding: 8px;
+  line-height: 1;
+  color: #111;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1; }
+
+/****** Cookie Banner ********/
 #cookieBanner {
   font-family: Montserrat;
   display: none;
@@ -39,9 +66,6 @@ body {
   font-size: 2.6rem;
   padding: 10px; }
 
-.padding {
-  padding: 20px; }
-
 .cookiePara {
   padding: 20px;
   margin: 0 1vw;
@@ -56,47 +80,53 @@ body {
   min-width: 120px;
   color: #0040FF; }
 
-.galImg2, .galImg3, .galImg4 {
-  display: none; }
-
+/****** Main grid ********/
 #mainhome {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-row-gap: 10px; }
 
-#backToTop {
-  position: fixed;
-  font-size: 40px;
-  padding: 8px;
-  line-height: 1;
-  color: #111;
-  bottom: 10px;
-  right: 10px;
-  z-index: 1; }
-
+/****** Header and Landing ********/
 #free {
   font-family: Merienda;
-  color: #41E800; }
+  color: #ff2323; }
+
+.fullImg {
+  min-width: 100%;
+  max-width: 100vw;
+  height: 60vh;
+  overflow: hidden; }
 
 h1 {
   font-family: Arvo;
   width: 100%;
   position: absolute;
-  top: 10rem;
-  font-size: 8vw;
-  padding: 3vw 10vw;
-  max-width: 100%;
-  color: #111;
+  top: calc(50px + 10vmax);
+  height: calc(190px + 16vmax);
+  padding: calc(36px + 4vw) 2vw;
+  font-size: calc(20px + 4vw);
+  color: #0040FF;
   font-weight: 900;
   text-transform: uppercase;
-  background: rgba(255, 0, 0, 0.72); }
+  background: rgba(253, 235, 25, 0.82);
+  line-height: 1.2; }
+  h1 .cta {
+    display: block;
+    margin: 22px auto;
+    width: 220px;
+    font-size: 1.2rem;
+    color: #0040FF;
+    border: 2px solid #0040FF;
+    border-radius: 5px;
+    padding: 10px 28px;
+    background: #41E800; }
 
 h2 {
   font-family: Raleway;
   font-size: 3rem;
   font-weight: 900;
-  margin: 80px 0 40px 0;
+  margin: 180px 0 40px 0;
   text-shadow: 1px 1px 4px #bbbbbb; }
 
 h3 {
@@ -115,11 +145,7 @@ img {
 
 .productHeadings {
   height: 140px;
-  padding: 5% 2% 1% 2%; }
-
-.fullImg {
-  max-width: 100%;
-  width: 100vw; }
+  padding: 8% 2% 3% 2%; }
 
 button, .genBut {
   display: block;
@@ -132,21 +158,15 @@ button, .genBut {
   color: #e2e2e2;
   cursor: pointer; }
 
-genBut a {
-  color: #e2e2e2;
+.genBut {
   padding: 0 15px;
-  margin-top: 35vw; }
+  background: #0040FF; }
+  .genBut a {
+    color: #e2e2e2;
+    margin-top: 35vw; }
 
 #solCar {
   width: 80%; }
-
-.para {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  letter-spacing: 0.05rem;
-  word-spacing: 0.0008rem;
-  margin: 10px 30px 60px 30px;
-  font-weight: 100; }
 
 #bkimg2 {
   background-image: url("../images/large/skyLarge2cropMore.jpg");
@@ -189,24 +209,15 @@ genBut a {
 .galImg {
   text-align: center;
   max-width: 100%;
-  max-height: 70%;
+  max-height: 100%;
   overflow: hidden;
   border: 2px solid black;
   cursor: pointer; }
 
+.galImg2, .galImg3, .galImg4 {
+  display: none; }
+
 /************ End Gallery Page ***************/
-.hoverBut:hover {
-  text-shadow: 0px 0px 6px white;
-  box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-  transition: all 0.4s ease 0s; }
-
-.hoverBut:active {
-  text-shadow: 0px 0px 6px white;
-  box-shadow: 0px -5px 40px 10px rgba(0, 0, 0, 0.57);
-  box-shadow: 0px -5px 40px 10px rgba(0, 0, 0, 0.57);
-  transition: all 0.4s ease 0s; }
-
 .formBut {
   padding: 6px .5rem;
   font-size: 1.2rem;
@@ -214,23 +225,19 @@ genBut a {
 
 /************ Products Page ***************/
 #contProducts {
+  max-width: 100%;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 4fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   grid-gap: 50px;
   margin: 10px auto; }
-
-.myBorder {
-  border: #6E6E6E solid 2px;
-  box-shadow: 1px 1px 5px 3px #6E6E6E;
-  border-radius: 0.8%; }
 
 .product {
   display: flex;
   flex-direction: column;
   background: #bbbbbb;
   padding-bottom: 6px;
-  min-width: 300px;
+  min-width: 280px;
   max-width: 1950px;
   margin: 5px; }
   .product p {
@@ -239,71 +246,15 @@ genBut a {
 .prodImg {
   max-width: 100%; }
 
-.feed-container {
-  font-size: 26px;
-  border: 1px solid #2575bf; }
-
-.feed-container a {
-  color: #333;
-  text-decoration: none; }
-
-.feed-container a:hover {
-  color: #3d3d3d;
-  text-decoration: underline; }
-
-.feed-container .header {
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  font-size: 18px;
-  border-bottom: 1px solid #fff;
-  text-align: center; }
-
-.feed-container .footer {
-  margin: 0px;
-  padding: 5px 5px 5px 5px;
-  color: #fff; }
-
-.feed-container .header .title {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: #333; }
-
-.feed-container .content {
-  margin: 80px;
-  padding: 0 3px; }
-
-.feed-container .content .item {
-  margin: 0 0 7px 0;
-  padding: 0 0 7px 0;
-  border-bottom: 1px dotted #fff; }
-
-.feed-container .content .item .title {
-  margin: 1px 0 1px 3px;
-  padding: 1px 2px 1px 3px;
-  color: #333;
-  font-weight: bold; }
-
-.feed-container .content .item .description {
-  margin: 0 0 0 3px;
-  padding: 0 2px 0 3px;
-  color: #fff; }
-
-.feed-container .content .item .description a {
-  text-decoration: none;
-  color: #666; }
-
-.feed-container .content .item .description a:hover {
-  text-decoration: underline;
-  color: #ccc; }
-
 #siteLink, .siteMap {
-  text-decoration-line: underline;
   text-align: left; }
 
 /************End Of Style***************/
 /************** Gallery Media Query ****************************/
 @media (min-width: 800px) {
+  .fullImg {
+    height: 100vh;
+    max-width: 100%; }
   .galImg2 {
     display: inline-block; }
   #galleryButton {
