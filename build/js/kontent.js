@@ -161,30 +161,18 @@ function selectProdOption($prod){
 
 //test here 
 $aboutLink.click(function(){
-    $('main').load('abouts.html min > *');
+    $('main').load('aboutus.html main > *');
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
 
 
 $newsLink.click(function(){
-    $('main').load('news.html #mainNews > *', null, onLoadNewspage);
+    $('main').load('news.html #mainNews > *');
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
 
-function onLoadNewspage (){
-    // var addscript1=$.getScript("js/RSSScript.js",null);
-    // var addscript2=$.getScript("js/rss-feed.js",null);
-    // $('main').load('news.html #mainNews > *',null);
-        // $('main').load('news.html #mainNews > *');
-    // $('#newsDiv').get(addscript1);
-    // $('#newsDiv').load(addscript2);
-    // $('#newsDiv').load(addscript1).load(addscript2);
-    // $('#newsDiv').load(addscript1).load(addscript2);
-    //   $('#newsDiv').get($.getScript("js/RSSScript.js",null)).get($.getScript("js/rss-feed.js",null));
-    // $('#newsDiv').load(addscript1).load(addscript2);
-  }
 
 
 $contactLink.click(function(){
