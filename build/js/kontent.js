@@ -138,7 +138,8 @@ $buyBut.click(function(){
 
 // And pass in the product name to the select list
 function openContactPage ($prod){
-    $('main').load('contact.html main > *', null, function(){
+    $('main').load('contact.html main > *', myData, function(){
+        console.log("mydata="+myData);
         selectProdOption($prod);
         });
     $('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -161,7 +162,7 @@ function selectProdOption($prod){
 
 
 $aboutLink.click(function(){
-    $('main').load('aboutus.html main > *');
+    $('main').load('aboutus.html min > *');
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
@@ -171,8 +172,6 @@ $newsLink.click(function(){
     $('main').load('news.html #mainNews > *', null, onLoadNewspage);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
-
-
 
 
 function onLoadNewspage (){
