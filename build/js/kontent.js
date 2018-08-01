@@ -138,8 +138,7 @@ $buyBut.click(function(){
 
 // And pass in the product name to the select list
 function openContactPage ($prod){
-    $('main').load('contact.html main > *', myData, function(){
-        console.log("mydata="+myData);
+    $('main').load('contact.html main > *',null , function(){
         selectProdOption($prod);
         });
     $('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -160,9 +159,9 @@ function selectProdOption($prod){
 
 /**********other AJAX links***************/
 
-
+//test here 
 $aboutLink.click(function(){
-    $('main').load('aboutus.html min > *');
+    $('main').load('abouts.html min > *');
     $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
