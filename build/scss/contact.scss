@@ -24,8 +24,8 @@ $colourbla:#111;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     font-size: 1.6em;
-    grid-row-gap: 25px;
-    max-width: 600px;
+    grid-row-gap: 15px;
+    max-width: 550px;
     margin: 0 auto;
     padding: 0 3rem;
     border:3px solid $colourbla;
@@ -34,42 +34,49 @@ $colourbla:#111;
     input[type=text],[type= email],[type= tel],[type= date],[type= check], select{height:30px;
     }
    
-    #labOrder{ grid-column: 1/7;
+    #labOrder{ grid-column: 1/5;
         grid-row: 3;}
 
-    #inpCheck{ grid-column: 8/13;
+    #inpCheck{ grid-column: 6/73;
         grid-row: 3;
         padding-left:50px;
     }
-    #labname{ grid-column: 1/7;
+    #labname{ grid-column: 1/5;
         grid-row: 4;}
-    #labadd{ grid-column: 1/7;
+    #labadd{ grid-column: 1/5;
         grid-row: 5;}
-    #labtel{ grid-column: 1/7;
-        grid-row: 8;}
-    #labmail{ grid-column: 1/7;
+    
+    #labadd2{ grid-column:1/5;
+        grid-row: 6;}
+    
+    #labadd3{ grid-column: 1/5;
+        grid-row: 7;}
+
+    #labtel{ grid-column: 1/5;
+    grid-row: 8;}
+    #labmail{ grid-column: 1/5;
         grid-row: 9;}
-    #labcomment{ grid-column: 1/7;
+    #labcomment{ grid-column: 1/5;
         grid-row: 10;}
-    #inpname{ grid-column: 7/13;
+    #inpname{ grid-column: 5/13;
         grid-row: 4;
     }
-    #inpadd{ grid-column: 7/13;
+    #inpadd{ grid-column: 5/13;
         grid-row: 5;
     }
-    #inpadd2{ grid-column: 7/13;
+    #inpadd2{ grid-column: 5/13;
         grid-row: 6;
     }
-    #inpadd3{ grid-column: 7/13;
+    #inpadd3{ grid-column: 5/13;
         grid-row: 7;
     }
-    #inptel{ grid-column: 7/13;
+    #inptel{ grid-column: 5/13;
         grid-row: 8;
     }
-    #inpmail{ grid-column: 7/13;
+    #inpmail{ grid-column: 5/13;
         grid-row: 9;
     }
-    #inpcomment{ grid-column: 7/13;
+    #inpcomment{ grid-column: 5/13;
         grid-row: 10;
     }
 
@@ -82,43 +89,37 @@ $colourbla:#111;
     }
 
     #labinstallDate{ 
-        grid-column: 3/7;
+        grid-column: 1/5;
         grid-row: 13;
     }
     
     #installDate{ 
-        grid-column: 7/13;
+        grid-column: 5/13;
         grid-row: 13;
     }
 
 
     #labproductList{ 
-        grid-column: 3/7;
+        grid-column: 1/5;
         grid-row: 14;
     }
     
     #productList{ 
-        grid-column: 7/13;
+        grid-column: 5/13;
         grid-row: 14;
     }
     
     #submitContact{
-        grid-column: 5/8;
-        grid-row: 16;
-        margin: 30px 0 30px 0;
+        grid-column: 8/12;
+        grid-row: 15;
+        margin: 50px 0 70px 0;
+        background: $colourblu;
+        color: $colourlg;
+        border-radius: 5px;
         // justify-self: center;
         }
     
-    #askQ{
-        grid-column: 1/13;
-        grid-row: 15;
-        }
-
-
-    #sendResult{
-        grid-column: 1/13;
-        grid-row: 17;
-        }
+   
 }//End formContactInner
 
 

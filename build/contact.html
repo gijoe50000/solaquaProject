@@ -7,24 +7,36 @@
                 page then this will be filled out already. For installations, enter a date and time that suits you, and we will
                 contact you shortly to confirm.</p>
           <div id="formContactInner">
-            <label id= "labOrder" for="checkbox">Do you want to order a product?</label>
+            <label id= "labOrder" for="inpCheck">Do you want to order a product?</label>
             <input id= "inpCheck" type="checkbox" name="checkbox">
-            <label id= "labname" for="name">Name:</label>
+            
+            <label id= "labname" for="inpname">Name:</label>
             <input id= "inpname" type="text" name="name">
-            <label id= "labadd" for="address">Address:
+           
+            <label id= "labadd" for="inpadd">Address:
                 <br>(optional)</label>
-            <input id= "inpadd" type="text" name="address">
-            <input id= "inpadd2" type="text" name="address2">
-            <input id= "inpadd3" type="text" name="address3">
-            <label id= "labtel" for="tel">Tel:</label>
+            <input id= "inpadd" type="text" name="Address">
+            
+            <label id= "labadd2" for="inpadd2">Town:</label>
+            <input id= "inpadd2" type="text" name="Town">
+            
+            <label id= "labadd3" for="inpadd3">County:</label>
+            <input id= "inpadd3" type="text" name="County">
+            
+            <label id= "labtel" for="inptel">Tel:</label>
             <input id= "inptel" type="tel" name="tel">
-            <label id= "labmail" for="email">Email:</label>
+            
+            <label id= "labmail" for="inpmail">Email:</label>
             <input id= "inpmail" type="email" name="email">
-            <label id= "labcomment"for="comment">Comment:</label>
+            
+            <label id= "labcomment"for="inpcomment">Comment:</label>
             <textarea id= "inpcomment"  name="comment" id="comment" cols="30" rows="10"></textarea>
+            
             <p class="italctext">If you are ordering a product or installation please select the product from the dropdown list. Otherwise select "none".</p>
+            
             <label id="labinstallDate"for="installDate">install Date:</label>
             <input type="date" name="installDate" id="installDate">
+            
             <label id= "labproductList"for="productList">product List:</label>
             <select name="productList" id="productList">
                 <option value="none">None</option>
@@ -37,12 +49,12 @@
       
             
 
-            <input type="submit" value="Send" name="submit" id="submitContact" class= " formBut hoverBut">
-                <div class="boldTextContact padding " id="sendResult"></div>
-           </div>
+            <input type="submit" value="Send" name="submit" id="submitContact" class= " formBut button hoverBut">
+                <!-- <div class="boldTextContact padding " id="sendResult"></div> -->
+        </div>  <!-- form container -->
          
-                <p id= "askQ" class=" boldTextContact">If you have any questions, 
-                please don’t hesitate to ask. We are happy to hear from you!</p>
+            <p id= "askQ" class=" boldTextContact">If you have any questions, 
+            please don’t hesitate to ask. We are happy to hear from you!</p>
 
         </form>
 <!-- End of Form -->

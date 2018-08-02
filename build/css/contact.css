@@ -13,55 +13,61 @@
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   font-size: 1.6em;
-  grid-row-gap: 25px;
-  max-width: 600px;
+  grid-row-gap: 15px;
+  max-width: 550px;
   margin: 0 auto;
   padding: 0 3rem;
   border: 3px solid #111; }
   #formContactInner input[type=text], #formContactInner [type=email], #formContactInner [type=tel], #formContactInner [type=date], #formContactInner [type=check], #formContactInner select {
     height: 30px; }
   #formContactInner #labOrder {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 3; }
   #formContactInner #inpCheck {
-    grid-column: 8/13;
+    grid-column: 6/73;
     grid-row: 3;
     padding-left: 50px; }
   #formContactInner #labname {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 4; }
   #formContactInner #labadd {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 5; }
+  #formContactInner #labadd2 {
+    grid-column: 1/5;
+    grid-row: 6; }
+  #formContactInner #labadd3 {
+    grid-column: 1/5;
+    grid-row: 7; }
   #formContactInner #labtel {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 8; }
   #formContactInner #labmail {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 9; }
   #formContactInner #labcomment {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 10; }
   #formContactInner #inpname {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 4; }
   #formContactInner #inpadd {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 5; }
   #formContactInner #inpadd2 {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 6; }
   #formContactInner #inpadd3 {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 7; }
   #formContactInner #inptel {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 8; }
   #formContactInner #inpmail {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 9; }
   #formContactInner #inpcomment {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 10; }
   #formContactInner .italctext {
     grid-column: 1/13;
@@ -69,27 +75,24 @@
     font-style: italic;
     padding: 30px; }
   #formContactInner #labinstallDate {
-    grid-column: 3/7;
+    grid-column: 1/5;
     grid-row: 13; }
   #formContactInner #installDate {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 13; }
   #formContactInner #labproductList {
-    grid-column: 3/7;
+    grid-column: 1/5;
     grid-row: 14; }
   #formContactInner #productList {
-    grid-column: 7/13;
+    grid-column: 5/13;
     grid-row: 14; }
   #formContactInner #submitContact {
-    grid-column: 5/8;
-    grid-row: 16;
-    margin: 30px 0 30px 0; }
-  #formContactInner #askQ {
-    grid-column: 1/13;
-    grid-row: 15; }
-  #formContactInner #sendResult {
-    grid-column: 1/13;
-    grid-row: 17; }
+    grid-column: 8/12;
+    grid-row: 15;
+    margin: 50px 0 70px 0;
+    background: #0040FF;
+    color: #E5E5E5;
+    border-radius: 5px; }
 
 .boldTextContact {
   font-weight: bold;
