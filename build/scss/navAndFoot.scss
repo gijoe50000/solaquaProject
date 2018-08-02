@@ -10,25 +10,62 @@ $colourbla:#111;
 text-decoration: none;  }
 
 
-// Top nav bar
-nav{
+// Top nav
+#navHome{
+  display:grid;
+  grid-template-rows: 2;
+  grid-template-columns:repeat(12, 1fr);
+  grid-gap: 10px;
+  background:$colourmg;
+ 
+}
+
+
+#navContact{
+  grid-column: 1/13;
+  grid-row: 1; 
+  background: rgba($colourgre,0.7);
+  width:100%;
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
-  background:$colourlg;
-  height:80px; 
+  justify-content: space-evenly;;
+  font-size: 1rem;
+  padding: 0 4px;
+    li{
+      padding: 6px 4px;
+    }
+  }
+
+#logo{ 
+  grid-column: 1/4;
+  grid-row: 3; 
+  
 }
 
 
 #hmbMenu{
- position: absolute;
- right: 7px;top:7px;
+  grid-column: 12/13;
+  grid-row: 2; 
+  z-index: 5;
   visibility: visible;
+  height:48px;
   padding: 0 8px 0 8px;
-  margin:15px;
   font-size:40px;
   line-height: 1.1;
   cursor: pointer;
+  align-self: flex-start;
+  
+}
+
+// Top nav for large screens
+#navListLarge {
+  grid-column: 2/13;
+  grid-row: 2; 
+  visibility: hidden;
+  font-size: 1.52rem;
+  padding-top: 35px;
+  height:16px;
+  li{padding-left:1.7vw;}
   
 }
 
@@ -37,6 +74,7 @@ nav{
   background-color: #fff;
   border:2px solid #ccc;
   border-radius: 8px;
+  z-index: 5;
 }  
 
 
@@ -53,43 +91,26 @@ ul{
   z-index:1;
   }
 
-// Top nav for large screens
-  #navListLarge {
-    visibility: hidden;
-    font-size: 1.52rem;
-  }
+
 
 
 
 //smaller screens
   #navList{
     display:none;
-    position:absolute;
-    right:0px;
-    top:80px;
-    width:100vw;
     display:flex;
     flex-direction: column;
     font-size: 1.6rem;
     background: rgba(110,110,110,0.7);
     overflow: visible;
-    
-
-  
-      a{
-          color:$colourlg;  
-        }
-  
+      a{color:$colourlg;}
       li{
           padding:15px 35px 15px 35px;
           border:1px solid $colourlg;
           background: rgba(80,80,80,0.85);
           padding:20px 0;
       }
-
-      li:hover{ 
-          background: $colourdg;       
-      }
+      li:hover{background: $colourdg;}
 } //End navList
 
 
@@ -100,6 +121,9 @@ ul{
   font-size: 1.6rem;
   background: rgba(110,110,110,0.7);
 }
+
+
+
 
 
 /**************End Nav**********************/
@@ -236,44 +260,28 @@ footer{
  
  @media(min-width: "800px") { 
        
-  #navList{
-    display:none;
-  }
-
-
-
+  #navList{display:none;}
   #hmbMenu {display:none;}
 
   #navListLarge {
       visibility: visible;
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      position: static;
       align-items: center;
-      background: $colourlg;
-    
+
         li {
-          padding: 15px 15px 15px 1px;
-          // border: 1px solid $colourlg;
-          background: $colourlg;
+          // padding: 40px 2vw 20px 1px;
         }
 
         li:hover {
-          background: white;
-          // border-radius: 8px;
-          box-shadow: inset $colourlg -1px -1px 1px;
           a { color: $colourgre;}
         }
 
         li:active {
           background: white;
-          // border-radius: 8px;
           box-shadow: inset $colourdg 1px 1px 1px;
             a { color: $colourdg;}
           }
-
-
         a {
           color: $colourdg;
           padding: 0 10px;
@@ -290,50 +298,51 @@ footer{
 
 
 
-
-
-
   @media(min-width: "1200px") { //large screens
-
-  /*****Footer****/
+  
+  
+  
+  /*********Nav************/
+  
+  #navListLarge {
+   
+    font-size: 1.72rem;
+    padding-top: 35px;
+    height:16px;
+    li{padding-left:4vw;}
+    
+  }
+  
+  
+    /*****Footer****/
   #footerGrid{
     flex-direction: row;
     max-width:1400px;
 
+    #newsletter{
+        background: $colourmg;
+        max-width: 300px;
+        box-shadow: inset  $colourdg -3px -3px 200px 4px;
+        input{
+            margin:5px;
+            }
+      }
 
-  #newsletter{
-      background: $colourmg;
-      max-width: 300px;
-      box-shadow: inset  $colourdg -3px -3px 200px 4px;
-    
-      input{
-          margin:5px;
+      #footAddress{ width:300px;}
+
+      #navFooter, #policyFooter{
+        text-align: left;
+        width:300px;
+        li {
+            padding:6px;
+            border-bottom: $colourdg 1px solid;
+            max-width: 120px;
+            a{color: $colourdg;}
           }
-    }
+      }
 
 
-  #footAddress{ width:300px;}
-
-
-
-
-  #navFooter, #policyFooter{
-      text-align: left;
-      width:300px;
-      li {
-          padding:6px;
-          border-bottom: $colourdg 1px solid;
-          max-width: 120px;
-          a{color: $colourdg;}
-         }
-    }
-
-    
-
-    
-     
   } //end footer grid
-
 
 } //end media 1200 and up
 

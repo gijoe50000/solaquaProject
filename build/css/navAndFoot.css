@@ -2,28 +2,57 @@
 * {
   text-decoration: none; }
 
-nav {
+#navHome {
+  display: grid;
+  grid-template-rows: 2;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  background: #DFDCDC; }
+
+#navContact {
+  grid-column: 1/13;
+  grid-row: 1;
+  background: rgba(65, 232, 0, 0.7);
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  background: #E5E5E5;
-  height: 80px; }
+  justify-content: space-evenly;
+  font-size: 1rem;
+  padding: 0 4px; }
+  #navContact li {
+    padding: 6px 4px; }
+
+#logo {
+  grid-column: 1/4;
+  grid-row: 3; }
 
 #hmbMenu {
-  position: absolute;
-  right: 7px;
-  top: 7px;
+  grid-column: 12/13;
+  grid-row: 2;
+  z-index: 5;
   visibility: visible;
+  height: 48px;
   padding: 0 8px 0 8px;
-  margin: 15px;
   font-size: 40px;
   line-height: 1.1;
-  cursor: pointer; }
+  cursor: pointer;
+  align-self: flex-start; }
+
+#navListLarge {
+  grid-column: 2/13;
+  grid-row: 2;
+  visibility: hidden;
+  font-size: 1.52rem;
+  padding-top: 35px;
+  height: 16px; }
+  #navListLarge li {
+    padding-left: 1.7vw; }
 
 #hmbMenu:hover {
   background-color: #fff;
   border: 2px solid #ccc;
-  border-radius: 8px; }
+  border-radius: 8px;
+  z-index: 5; }
 
 #hmbMenu:active {
   box-shadow: inset #DFDCDC 4px 4px 8px 10px;
@@ -35,16 +64,8 @@ ul {
   list-style: none;
   z-index: 1; }
 
-#navListLarge {
-  visibility: hidden;
-  font-size: 1.52rem; }
-
 #navList {
   display: none;
-  position: absolute;
-  right: 0px;
-  top: 80px;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   font-size: 1.6rem;
@@ -160,18 +181,9 @@ footer {
     visibility: visible;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    position: static;
-    align-items: center;
-    background: #E5E5E5; }
-    #navListLarge li {
-      padding: 15px 15px 15px 1px;
-      background: #E5E5E5; }
-    #navListLarge li:hover {
-      background: white;
-      box-shadow: inset #E5E5E5 -1px -1px 1px; }
-      #navListLarge li:hover a {
-        color: #41E800; }
+    align-items: center; }
+    #navListLarge li:hover a {
+      color: #41E800; }
     #navListLarge li:active {
       background: white;
       box-shadow: inset #6E6E6E 1px 1px 1px; }
@@ -182,6 +194,13 @@ footer {
       padding: 0 10px; } }
 
 @media (min-width: 1200px) {
+  /*********Nav************/
+  #navListLarge {
+    font-size: 1.72rem;
+    padding-top: 35px;
+    height: 16px; }
+    #navListLarge li {
+      padding-left: 4vw; }
   /*****Footer****/
   #footerGrid {
     flex-direction: row;
