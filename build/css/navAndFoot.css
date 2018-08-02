@@ -24,7 +24,8 @@
 
 #logo {
   grid-column: 1/4;
-  grid-row: 3; }
+  grid-row: 3;
+  margin-bottom: 5px; }
 
 #hmbMenu {
   grid-column: 12/13;
@@ -185,10 +186,9 @@ footer {
     #navListLarge li:hover a {
       color: #41E800; }
     #navListLarge li:active {
-      background: white;
-      box-shadow: inset #6E6E6E 1px 1px 1px; }
+      box-shadow: white 10px 10px 100px,white -10px -10px 100px; }
       #navListLarge li:active a {
-        color: #6E6E6E; }
+        color: #0040FF; }
     #navListLarge a {
       color: #6E6E6E;
       padding: 0 10px; } }

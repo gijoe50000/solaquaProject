@@ -220,9 +220,12 @@ button, .genBut {
   display: none; }
 
 /************ End Gallery Page ***************/
-.hoverBut:hover {
-  box-shadow: 3px 3px 10px #e2e2e2;
-  font-size: 1.25rem; }
+.hoverBut:hover, .formBut:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
+
+.hoverBut:active, .formBut:active {
+  box-shadow: 0 2px 8px #666;
+  transform: translateY(3px); }
 
 .formBut {
   padding: 6px .5rem;
